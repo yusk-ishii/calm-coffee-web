@@ -1,11 +1,55 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Welcome from "../components/Welcome.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout>
+  <div class="fv">
+    <div>
+      <h1>FVエリア</h1>
+      <p>テキスト確認 ABC 1234 abc</p>
+      <p>abc</p>
+      <p>あいうえお</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="sticky">
+      <img src="/fv.jpg" alt="test" />
+    </div>
+    <div class="content">
+      <p>コンテンツエリア</p>
+    </div>
+  </div>
+  <!-- <Welcome /> -->
+</BaseLayout>
+
+<style>
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .fv {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(255, 218, 214);
+  }
+
+  .container {
+    display: flex;
+  }
+
+  .sticky {
+    width: 50%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+  }
+
+  .content {
+    width: 50%;
+    height: 200vh;
+  }
+</style>
