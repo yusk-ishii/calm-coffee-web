@@ -1,7 +1,10 @@
 ---
-import "destyle.css";
-import "@fontsource/zen-kaku-gothic-new";
-import "@fontsource-variable/montserrat";
+import 'destyle.css';
+import '@styles/global.scss';
+import '@fontsource/zen-kaku-gothic-new';
+import '@fontsource-variable/montserrat';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <!doctype html>
@@ -14,12 +17,14 @@ import "@fontsource-variable/montserrat";
     <title>calm coffee</title>
   </head>
   <body>
+    <Header />
     <slot />
+    <Footer />
   </body>
 </html>
 
 <style>
   body {
-    font-family: "Montserrat Variable", "Zen Kaku Gothic New", sans-serif;
+    font-family: 'Montserrat Variable', 'Zen Kaku Gothic New', sans-serif;
   }
 </style>

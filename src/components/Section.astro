@@ -1,0 +1,23 @@
+---
+// interface Props {
+//   id: string;
+//   kicker: string;
+//   title: string;
+//   paragraphs: string[];
+// }
+
+// const { id, kicker, title, paragraphs } = Astro.props;
+
+const { frontmatter } = Astro.props;
+---
+
+<p>[{frontmatter.title}]</p>
+
+<!-- <sections id={id} class="section">
+  <p>{kicker}</p>
+  <h2>{title}</h2>
+  {paragraphs.map((p) => <p>{p}</p>)}
+  <div>
+    <slot />
+  </div>
+</sections> -->

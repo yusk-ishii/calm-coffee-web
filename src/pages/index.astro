@@ -1,26 +1,42 @@
 ---
-import Welcome from "../components/Welcome.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from '../layouts/Layout.astro';
+import KeyVisual from '../components/KeyVisual.astro';
+// import Section from '../components/Section.astro';
+
+import * as story from '../content/story.md';
 ---
 
 <BaseLayout>
-  <div class="fv">
-    <div>
-      <h1>FVエリア</h1>
-      <p>テキスト確認 ABC 1234 abc</p>
-      <p>abc</p>
-      <p>あいうえお</p>
-    </div>
-  </div>
-  <div class="container">
-    <div class="sticky">
-      <img src="/fv.jpg" alt="test" />
-    </div>
-    <div class="content">
-      <p>コンテンツエリア</p>
-    </div>
-  </div>
-  <!-- <Welcome /> -->
+  <KeyVisual />
+  {story.frontmatter.title}
+
+  <!-- <Section frontmatter={story} /> -->
+
+  <!-- {story.title} -->
+  <!-- <Section
+    id="story"
+    kicker="STORY"
+    title="時間がほどける鎌倉の一杯。"
+    paragraphs={[
+      "忙しい日々の合間にふと、海辺で心を休めたくなる瞬間があります。",
+      "鎌倉・七里ヶ浜の静かな波音と、深いコーヒーの香りが溶け合うこの場所で、 Calm Coffee は生まれました。",
+      "穏やかな波音に包まれ、陽の光が優しく差し込む店内。 美味しいコーヒーとともに、時間はゆるやかにほどけ、 忙しさに埋もれていた “あなた自身” がそっと姿を現します。",
+      "一杯のコーヒーが誘うのは、静けさで満ちる深い呼吸。",
+      "Calm Coffee は、あなたの心がそっと深呼吸できる<br>そんな場所でありたいと願っています。",
+    ]}
+  />
+  <Section
+    id="menu"
+    kicker="MENU"
+    title="季節に寄り添う珈琲たち。"
+    paragraphs={["a"]}
+  />
+  <Section
+    id="item"
+    kicker="ITEM"
+    title="おうち時間にも穏やかな余白を。"
+    paragraphs={["a"]}
+  /> -->
 </BaseLayout>
 
 <style>
@@ -34,7 +50,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     place-items: center;
     width: 100%;
     height: 100vh;
-    background-color: rgb(255, 218, 214);
+    background-color: rgb(255 218 214);
   }
 
   .container {
@@ -42,10 +58,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   }
 
   .sticky {
-    width: 50%;
-    height: 100vh;
     position: sticky;
     top: 0;
+    width: 50%;
+    height: 100vh;
   }
 
   .content {
