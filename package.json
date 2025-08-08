@@ -6,12 +6,37 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint:js": "eslint . --fix",
+    "lint:css": "stylelint \"**/*.{css,scss,astro}\" --ignore-path .gitignore",
+    "lint:format": "prettier . --check",
+    "lint": "npm-run-all -s -c lint:*",
+    "fix:js": "npm run lint:js -- --fix",
+    "fix:css": "npm run lint:css -- --fix",
+    "fix:format": "prettier . --write",
+    "fix": "npm-run-all -p fix:*"
   },
   "dependencies": {
     "@fontsource-variable/montserrat": "^5.2.6",
     "@fontsource/zen-kaku-gothic-new": "^5.2.6",
     "astro": "^5.12.3",
     "destyle.css": "^4.0.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "@typescript-eslint/parser": "^8.39.0",
+    "astro-eslint-parser": "^1.2.2",
+    "eslint": "^9.32.0",
+    "eslint-plugin-astro": "^1.3.1",
+    "npm-run-all": "^4.1.5",
+    "postcss-html": "^1.8.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "sass": "^1.90.0",
+    "stylelint": "^16.23.1",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-recess-order": "^7.1.0",
+    "stylelint-config-standard-scss": "^15.0.1",
+    "typescript-eslint": "^8.39.0"
   }
 }

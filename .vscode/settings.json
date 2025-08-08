@@ -1,0 +1,16 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never",
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "prettier.documentSelectors": ["**/*.astro"],
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // Linting using ESLint.
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  // Linting using StyleLint.
+  "stylelint.validate": ["html", "astro", "scss"]
+}
