@@ -1,0 +1,88 @@
+---
+import Section from './Section.astro';
+
+const id = 'item';
+const title = 'ITEM';
+const subTitle = 'おうち時間にも<br />穏やかな余白を。';
+const paragraphs = [
+  'お気に入りの一杯をご自宅でも。<br />店内でお淹れしているブレンド豆や、<br />手軽に楽しめるドリップパックもご用意しています。',
+];
+---
+
+<Section id={id} title={title} subTitle={subTitle} paragraphs={paragraphs}>
+  <ul class="item-list">
+    <li class="product">
+      <img
+        src="https://images.unsplash.com/photo-1751554807233-92e862c4f36a"
+        alt=""
+        class="product-image"
+      />
+      <div class="product-info">
+        <h3 class="product-name">Calmブレンド</h3>
+        <p class="product-price">100gから販売しております。</p>
+      </div>
+    </li>
+    <li class="product">
+      <img
+        src="https://images.unsplash.com/photo-1751554807233-92e862c4f36a"
+        alt=""
+        class="product-image"
+      />
+      <div class="product-info">
+        <h3 class="product-name">エチオピアブレンド</h3>
+        <p class="product-price">100gから販売しております。</p>
+      </div>
+    </li>
+    <li class="product">
+      <img
+        src="https://images.unsplash.com/photo-1751554807233-92e862c4f36a"
+        alt=""
+        class="product-image"
+      />
+      <div class="product-info">
+        <h3 class="product-name">Calmブレンド 1袋</h3>
+        <p class="product-price">¥200-（税込）</p>
+      </div>
+    </li>
+    <li class="product">
+      <img
+        src="https://images.unsplash.com/photo-1751554807233-92e862c4f36a"
+        alt=""
+        class="product-image"
+      />
+      <div class="product-info">
+        <h3 class="product-name">エチオピアブレンド 1袋</h3>
+        <p class="product-price">¥200-（税込）</p>
+      </div>
+    </li>
+  </ul>
+</Section>
+
+<style lang="scss">
+  .item-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 14px;
+  }
+
+  .product {
+    .product-image {
+      aspect-ratio: 1 / 1;
+    }
+
+    .product-info {
+      margin-top: 8px;
+    }
+
+    .product-name {
+      font-size: 12px;
+      line-height: 1;
+    }
+
+    .product-price {
+      margin-top: 4px;
+      font-size: 10px;
+      line-height: 1;
+    }
+  }
+</style>

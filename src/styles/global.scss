@@ -1,3 +1,15 @@
+:root {
+  --text-color: #282D30;
+  --text-sub-color: #B7BEC3;
+}
+
 body {
-  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--text-color);
+}
+
+img {
+  width: 100%;
 }

@@ -1,23 +1,47 @@
 ---
-// interface Props {
-//   id: string;
-//   kicker: string;
-//   title: string;
-//   paragraphs: string[];
-// }
+interface Props {
+  id: string;
+  title: string;
+  subTitle: string;
+  paragraphs: string[];
+}
 
-// const { id, kicker, title, paragraphs } = Astro.props;
-
-const { frontmatter } = Astro.props;
+const { id, title, subTitle, paragraphs } = Astro.props;
 ---
 
-<p>[{frontmatter.title}]</p>
-
-<!-- <sections id={id} class="section">
-  <p>{kicker}</p>
-  <h2>{title}</h2>
-  {paragraphs.map((p) => <p>{p}</p>)}
-  <div>
+<section id={id} class="section">
+  <header class="header">
+    <h2 class="title">{title}</h2>
+    <p class="subtitle" set:html={subTitle} />
+  </header>
+  <div class="description">
+    {paragraphs.map((p) => <p set:html={p} />)}
+  </div>
+  <div class="content">
     <slot />
   </div>
-</sections> -->
+</section>
+
+<style lang="scss">
+  .title {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--text-sub-color);
+  }
+
+  .subtitle {
+    font-size: 43px;
+    font-weight: 300;
+    line-height: 1.4;
+    color: var(--text-color);
+  }
+
+  .description {
+    margin-top: 40px;
+    margin-bottom: 48px;
+
+    p + p {
+      margin-top: 16px;
+    }
+  }
+</style>

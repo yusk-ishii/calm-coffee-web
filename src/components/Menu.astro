@@ -1,0 +1,66 @@
+---
+import Section from './Section.astro';
+
+const id = 'menu';
+const title = 'MENU';
+const subTitle = '季節に寄り添う<br />珈琲たち。';
+const paragraphs = [
+  'その時季の空気や気分に寄り添えるよう、<br />コーヒー豆の選び方や焙煎を少しずつ見直しています。<br />香りと味わいのバランスは、いつも“今”のために。',
+  'あなたの静かな時間を支える一杯を、<br />今日も丁寧にご用意しています。',
+];
+---
+
+<Section id={id} title={title} subTitle={subTitle} paragraphs={paragraphs}>
+  <ul class="menu-list">
+    <li class="product">
+      <img
+        src="https://images.unsplash.com/photo-1751554807233-92e862c4f36a"
+        alt="Calmブレンド"
+        class="product-image"
+      />
+      <div class="product-info">
+        <h3 class="product-name">Calmブレンド</h3>
+        <p class="product-price">Regular ¥430- / Large ¥480-</p>
+      </div>
+    </li>
+    <li class="product">
+      <img
+        src="https://images.unsplash.com/photo-1751554807233-92e862c4f36a"
+        alt="カフェラテ"
+        class="product-image"
+      />
+      <div class="product-info">
+        <h3 class="product-name">カフェラテ</h3>
+        <p class="product-price">Regular ¥490 / Large ¥570-</p>
+      </div>
+    </li>
+  </ul>
+  <a href="#" class="menu-link">全メニューを見る</a>
+</Section>
+
+<style lang="scss">
+  .product {
+    .product-image {
+      aspect-ratio: 1 / 1;
+    }
+
+    .product-info {
+      margin-top: 12px;
+    }
+
+    .product-name {
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .product-price {
+      margin-top: 8px;
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    & + & {
+      margin-top: 40px;
+    }
+  }
+</style>

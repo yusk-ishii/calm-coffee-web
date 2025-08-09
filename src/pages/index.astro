@@ -1,14 +1,20 @@
 ---
 import BaseLayout from '../layouts/Layout.astro';
-import KeyVisual from '../components/KeyVisual.astro';
-// import Section from '../components/Section.astro';
-
-import * as story from '../content/story.md';
+// import KeyVisual from '../components/KeyVisual.astro';
+import Menu from '../components/Menu.astro';
+import Item from '../components/Item.astro';
 ---
 
 <BaseLayout>
-  <KeyVisual />
-  {story.frontmatter.title}
+  <Menu />
+  <Item />
+
+  <!-- <Content frontmatter={menu.frontmatter} /> -->
+  <!-- <Content title={menu.frontmatter.title} subTitle={menu.frontmatter.subTitle} />
+  <Content title={item.frontmatter.title}  /> -->
+
+  <!-- <KeyVisual />
+  {story.frontmatter.title} -->
 
   <!-- <Section frontmatter={story} /> -->
 
@@ -37,6 +43,89 @@ import * as story from '../content/story.md';
     title="おうち時間にも穏やかな余白を。"
     paragraphs={["a"]}
   /> -->
+  <!-- <header class="header">
+    <a href="/" class="logo">
+      <img src="logo" alt="calm coffee logo" />
+    </a>
+    <nav class="gnav" aria-label="グローバルナビゲーション">
+      <ul class="gnav-list">
+        <li class="gnav-item">
+          <a href="#story" class="gnav-link">STORY</a>
+        </li>
+        <li class="gnav-item">
+          <a href="#menu" class="gnav-link">MENU</a>
+        </li>
+        <li class="gnav-item">
+          <a href="#item" class="gnav-link">ITEM</a>
+        </li>
+        <li class="gnav-item">
+          <a href="#store-info" class="gnav-link">STORE INFO</a>
+        </li>
+        <li class="gnav-item">
+          <a href="#contact" class="gnav-link">CONTACT</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="ファーストビュー">
+      <img src="fv" alt="波と珈琲と静けさと。" />
+      <h1 class="catchphrase">波と珈琲と静けさと。</h1>
+    </section>
+
+    <section id="story" class="story">
+      <h2 class="story__title">時間がほどける鎌倉の一杯。</h2>
+      <article class="story__text">
+        <p>忙しい日々の合間に、ふと心を休めたくなる瞬間がある。</p>
+        <p>潮の香りを乗せた風が頬をなで、七里ヶ浜の波音が静かに寄せては返す。</p>
+        <p>その穏やかなリズムに合わせるように、1杯のコーヒーが心をほどいていく。</p>
+        <p>そんな場所をつくりたくて、calm coffee は生まれました。</p>
+        <p>あなたの日常に静かな余白をもたらす、鎌倉の一杯をお楽しみください。</p>
+      </article>
+      <figure class="story__image">
+        <img src="story" alt="story image" />
+      </figure>
+    </section>
+
+    <section id="store-info" class="store-info" aria-label="店舗情報">
+      <figure class="store-info__image">
+        <img src="store-info" alt="calm coffee 店舗外観" />
+      </figure>
+      <address class="store-info__address">
+        <p class="store-info__hours">8:00〜18:00（定休日：水曜）</p>
+        <p>〒248-0026 神奈川県鎌倉市七里ガ浜0-0-0</p>
+        <p>江ノ電「七里ヶ浜駅」より徒歩4分</p>
+        <p>電話番号: <a href="tel:0467000000">0467-00-0000</a></p>
+        <a href="#" class="store-info__map-link">GoogleMapで見る</a>
+      </address>
+    </section>
+
+    <main id="contact" class="contact" aria-label="お問い合わせ">
+      お問い合わせフォームなどが入る想定
+    </main>
+
+    <footer class="site-footer">
+      <a href="/" class="site-footer__logo">
+        <img src="logo" alt="calm coffee logo" />
+      </a>
+      <nav class="footer-nav" aria-label="フッターナビゲーション">
+        <ul class="footer-nav__list">
+          <li class="footer-nav__item"><a href="#story" class="footer-nav__link">STORY</a></li>
+          <li class="footer-nav__item"><a href="#menu" class="footer-nav__link">MENU</a></li>
+          <li class="footer-nav__item"><a href="#item" class="footer-nav__link">ITEM</a></li>
+          <li class="footer-nav__item">
+            <a href="#store-info" class="footer-nav__link">STORE INFO</a>
+          </li>
+          <li class="footer-nav__item"><a href="#contact" class="footer-nav__link">CONTACT</a></li>
+        </ul>
+      </nav>
+      <div class="site-footer__sns">
+        <a href="https://instagram.com/yourprofile" aria-label="Instagram">insta</a>
+      </div>
+      <small class="site-footer__copyright">©2025 calm coffee</small>
+    </footer>
+  </main> -->
 </BaseLayout>
 
 <style>
