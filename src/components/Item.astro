@@ -18,7 +18,7 @@ const paragraphs = [
     <li class="product">
       <img src={Item01Img.src} alt="" class="product-image" />
       <div class="product-info">
-        <h3 class="product-name">Calmブレンド</h3>
+        <h3 class="product-name">calmブレンド</h3>
         <p class="product-price">100gから販売しております。</p>
       </div>
     </li>
@@ -32,15 +32,15 @@ const paragraphs = [
     <li class="product">
       <img src={Item03Img.src} alt="" class="product-image" />
       <div class="product-info">
-        <h3 class="product-name">Calmブレンド 1袋</h3>
-        <p class="product-price">¥200-（税込）</p>
+        <h3 class="product-name">calmブレンド 1袋</h3>
+        <p class="product-price">¥200（税込）</p>
       </div>
     </li>
     <li class="product">
       <img src={Item04Img.src} alt="" class="product-image" />
       <div class="product-info">
         <h3 class="product-name">エチオピアブレンド 1袋</h3>
-        <p class="product-price">¥200-（税込）</p>
+        <p class="product-price">¥200（税込）</p>
       </div>
     </li>
   </ul>
@@ -51,6 +51,11 @@ const paragraphs = [
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: clamp-size(24) clamp-size(14);
+
+    @include mq-desktop {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px 20px;
+    }
   }
 
   .product {
@@ -60,17 +65,30 @@ const paragraphs = [
 
     .product-info {
       margin-top: clamp-size(8);
+
+      @include mq-desktop {
+        margin-top: 8px;
+      }
     }
 
     .product-name {
       font-size: clamp-size(12);
       line-height: 1;
+
+      @include mq-desktop {
+        font-size: 16px;
+      }
     }
 
     .product-price {
       margin-top: clamp-size(4);
       font-size: clamp-size(10);
       line-height: 1;
+
+      @include mq-desktop {
+        margin-top: 8px;
+        font-size: 14px;
+      }
     }
   }
 </style>

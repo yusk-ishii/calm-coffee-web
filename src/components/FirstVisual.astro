@@ -1,39 +1,108 @@
 ---
 import catchPhrase from '@assets/fv_catch-phrase.svg';
+import Logo from '@components/Logo.astro';
 ---
 
 <section class="fv">
-  <div class="fv-image"></div>
-  <h1 class="catchphrase">
-    <img src={catchPhrase.src} alt="波と珈琲と静けさと。" />
-  </h1>
+  <div class="fix-image">
+    <div></div>
+  </div>
+  <div class="fv-content">
+    <div class="fv-logo">
+      <Logo />
+    </div>
+    <h1 class="catchphrase">
+      <img src={catchPhrase.src} alt="波と珈琲と静けさと。" />
+    </h1>
+  </div>
 </section>
 
 <style lang="scss">
   .fv {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+    height: 100dvh;
+    overscroll-behavior: none;
+
+    @include mq-desktop {
+      display: grid;
+      place-items: center;
+    }
+
+    &::before {
+      display: block;
+      height: 50%;
+      content: '';
+
+      @include mq-desktop {
+        content: none;
+      }
+    }
   }
 
-  .fv-image {
-    position: relative;
+  .fix-image {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 50%;
-    background-image: url('../assets/fv_01_sp.jpg');
-    background-position: center;
-    background-size: cover;
+
+    @include mq-desktop {
+      position: fixed;
+      width: 60%;
+      height: 100%;
+      padding: 10px;
+      background-color: color-mix(in srgb, var(--text-color) 5%, transparent);
+    }
+
+    > div {
+      width: 100%;
+      height: 100%;
+      background-image: url('../assets/fv_01_sp.jpg');
+      background-position: center;
+      background-size: cover;
+
+      @include mq-desktop {
+        border-radius: 8px;
+      }
+    }
+  }
+
+  .fv-content {
+    height: 50%;
+
+    @include mq-desktop {
+      height: auto;
+      margin-bottom: 24px;
+    }
+  }
+
+  .fv-logo {
+    display: none;
+
+    @include mq-desktop {
+      display: block;
+      width: 260px;
+      margin: 0 auto;
+    }
   }
 
   .catchphrase {
     display: grid;
     place-items: center;
     width: 100%;
-    height: 50%;
+    height: 100%;
+
+    @include mq-desktop {
+      height: auto;
+      margin-top: 48px;
+    }
 
     img {
       width: clamp-size(82);
+
+      @include mq-desktop {
+        width: 140px;
+      }
     }
   }
 </style>

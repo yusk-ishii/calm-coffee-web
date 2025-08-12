@@ -7,25 +7,25 @@ import StoryImg from '@assets/image_story.jpg';
   <h2 class="story-title">
     <img src={StoryTitle.src} alt="心がほどける鎌倉の一杯。" />
   </h2>
-  <div class="story-text">
-    <p>
-      <span>忙しい日々の合間に、</span><br />
+  <div class="story-body">
+    <p class="story-text">
+      <span>忙しい日々の合間に、</span>
       <span>ふと心を休めたくなる瞬間がある。</span>
     </p>
-    <p>
-      <span>潮の香りを乗せた風が頬をなで、</span><br />
+    <p class="story-text">
+      <span>潮の香りを乗せた風が頬をなで、</span>
       <span>七里ヶ浜の波音が静かに寄せては返す。</span>
     </p>
-    <p>
-      <span>その穏やかなリズムに合わせるように、</span><br />
+    <p class="story-text">
+      <span>その穏やかなリズムに合わせるように、</span>
       <span>一杯の珈琲が心をほどいていく。</span>
     </p>
-    <p>
-      <span>そんな時間を届けたくて、</span><br />
+    <p class="story-text">
+      <span>そんな時間を届けたくて、</span>
       <span>calm coffee は生まれました。</span>
     </p>
-    <p>
-      <span>あなたの日常に静かな余白を添える、</span><br />
+    <p class="story-text">
+      <span>あなたの日常に静かな余白を添える、</span>
       <span>鎌倉の一杯をお楽しみください。</span>
     </p>
   </div>
@@ -38,6 +38,11 @@ import StoryImg from '@assets/image_story.jpg';
   .story {
     padding-top: clamp-size(80);
     padding-bottom: clamp-size(64);
+
+    @include mq-desktop {
+      padding-top: 80px;
+      padding-bottom: 64px;
+    }
   }
 
   .story-title {
@@ -48,15 +53,46 @@ import StoryImg from '@assets/image_story.jpg';
       width: clamp-size(250);
       height: auto;
     }
+
+    @include mq-desktop {
+      img {
+        width: 292px;
+      }
+    }
+  }
+
+  .story-body {
+    margin-top: clamp-size(48);
+    text-align: center;
+
+    @include mq-desktop {
+      margin-top: 64px;
+    }
   }
 
   .story-text {
-    margin-top: clamp-size(48);
+    display: flex;
+    flex-direction: column;
     font-size: clamp-size(18);
-    text-align: center;
 
-    p + p {
+    & + & {
       margin-top: clamp-size(40);
+    }
+
+    span + span {
+      margin-top: clamp-size(4);
+    }
+
+    @include mq-desktop {
+      font-size: 21px;
+
+      & + & {
+        margin-top: 48px;
+      }
+
+      span + span {
+        margin-top: 4px;
+      }
     }
   }
 
@@ -65,6 +101,10 @@ import StoryImg from '@assets/image_story.jpg';
 
     img {
       aspect-ratio: 1.618 / 1;
+    }
+
+    @include mq-desktop {
+      margin-top: 104px;
     }
   }
 </style>

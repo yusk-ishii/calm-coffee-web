@@ -68,6 +68,10 @@ const { iconColor = '#282D30' } = Astro.props;
 
     > dt {
       margin-right: clamp-size(8);
+
+      @include mq-desktop {
+        margin-right: 12px;
+      }
     }
 
     > dd {
@@ -78,11 +82,19 @@ const { iconColor = '#282D30' } = Astro.props;
 
       > span + span {
         margin-top: clamp-size(8);
+
+        @include mq-desktop {
+          margin-top: 12px;
+        }
       }
     }
 
     & + .detail {
       margin-top: clamp-size(16);
+
+      @include mq-desktop {
+        margin-top: 16px;
+      }
     }
   }
 
@@ -90,20 +102,15 @@ const { iconColor = '#282D30' } = Astro.props;
     display: block;
     width: clamp-size(16);
     height: clamp-size(16);
+
+    @include mq-desktop {
+      width: 20px;
+      height: 20px;
+    }
   }
 
   .link {
     position: relative;
-
-    &::after {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      display: block;
-      width: 100%;
-      height: clamp-size(1);
-      content: '';
-      background-color: var(--text-color);
-    }
+    text-decoration: underline;
   }
 </style>

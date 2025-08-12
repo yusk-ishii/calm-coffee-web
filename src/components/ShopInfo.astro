@@ -12,7 +12,7 @@ import ShopInfoImg from '@assets/image_shop-info.jpg';
     <ShopInfoDetails />
   </div>
   <div class="google-map">
-    <LinkButton text="Google MAPで見る" />
+    <LinkButton url="https://maps.app.goo.gl/fVz5B7Dtum7vN1vz8" text="Google MAPで見る" />
   </div>
 </section>
 
@@ -20,11 +20,14 @@ import ShopInfoImg from '@assets/image_shop-info.jpg';
   .store-info {
     padding-bottom: clamp-size(80);
     margin-top: clamp-size(48);
+
+    @include mq-desktop {
+      padding-bottom: 64px;
+      margin-top: 48px;
+    }
   }
 
   .store-info-image {
-    margin-bottom: clamp-size(48);
-
     img {
       aspect-ratio: 1.414 /1;
     }
@@ -39,11 +42,21 @@ import ShopInfoImg from '@assets/image_shop-info.jpg';
       display: grid;
       place-items: center;
     }
+
+    @include mq-desktop {
+      max-width: var(--pc-max-width);
+      padding: 0 40px;
+      margin: 48px auto 0;
+    }
   }
 
   .google-map {
     width: 100%;
     margin-top: clamp-size(32);
     text-align: center;
+
+    @include mq-desktop {
+      margin-top: 40px;
+    }
   }
 </style>

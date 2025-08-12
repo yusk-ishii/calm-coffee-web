@@ -12,11 +12,19 @@ import Navigation from '@components/Navigation.astro';
     padding: clamp-size(80) clamp-size(20) clamp-size(64);
     color: #fff;
     background-color: var(--main-color);
+
+    @include mq-desktop {
+      padding: 80px 20px 64px;
+    }
   }
 
   .copyright {
     display: block;
     margin-top: clamp-size(64);
     text-align: center;
+
+    @include mq-desktop {
+      margin-top: 80px;
+    }
   }
 </style>

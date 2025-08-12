@@ -1,12 +1,13 @@
 ---
 interface Props {
+  url: string;
   text: string;
 }
 
-const { text } = Astro.props;
+const { url, text } = Astro.props;
 ---
 
-<a href="#" class="link">{text}</a>
+<a class="link" href={url} target="_blank">{text}</a>
 
 <style lang="scss">
   .link {
@@ -15,9 +16,13 @@ const { text } = Astro.props;
     justify-content: space-between;
     width: clamp-size(168);
     padding: clamp-size(8);
-    font-size: clamp-size(14);
     line-height: 1;
     border-bottom: 1px solid var(--text-color);
+
+    @include mq-desktop {
+      width: 220px;
+      padding: 12px;
+    }
 
     &::after {
       display: block;
@@ -27,6 +32,11 @@ const { text } = Astro.props;
       background-image: url('../assets/icon_external.svg');
       background-repeat: no-repeat;
       background-size: contain;
+
+      @include mq-desktop {
+        width: 20px;
+        height: 20px;
+      }
     }
   }
 </style>

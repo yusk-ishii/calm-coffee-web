@@ -8,18 +8,24 @@ import ShopInfo from '@components/ShopInfo.astro';
 ---
 
 <BaseLayout>
-  <FirstVisual />
-  <div class="content">
-    <Story />
-    <Menu />
-    <Item />
-    <ShopInfo />
-  </div>
+  <main class="main">
+    <FirstVisual />
+    <div class="content">
+      <Story />
+      <Menu />
+      <Item />
+      <ShopInfo />
+    </div>
+  </main>
 </BaseLayout>
 
-<style>
+<style lang="scss">
   .content {
     width: 100%;
     padding-bottom: clamp-size(104);
+
+    @include mq-desktop {
+      padding-bottom: 104px;
+    }
   }
 </style>

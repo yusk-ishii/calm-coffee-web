@@ -27,12 +27,21 @@ const { id, title, subTitle, paragraphs } = Astro.props;
     max-width: var(--sp-max-width);
     padding: clamp-size(80) clamp-size(20) clamp-size(64);
     margin: 0 auto;
+
+    @include mq-desktop {
+      max-width: var(--pc-max-width);
+      padding: 64px 40px;
+    }
   }
 
   .title {
     font-size: clamp-size(18);
     font-weight: 300;
     color: var(--text-sub-color);
+
+    @include mq-desktop {
+      font-size: 21px;
+    }
   }
 
   .subtitle {
@@ -41,14 +50,28 @@ const { id, title, subTitle, paragraphs } = Astro.props;
     font-weight: 300;
     line-height: 1.4;
     color: var(--text-color);
+
+    @include mq-desktop {
+      margin-top: 12px;
+      font-size: 43px;
+    }
   }
 
   .description {
     margin-top: clamp-size(40);
     margin-bottom: clamp-size(48);
 
+    @include mq-desktop {
+      margin-top: 40px;
+      margin-bottom: 64px;
+    }
+
     p + p {
       margin-top: clamp-size(16);
+
+      @include mq-desktop {
+        margin-top: 16px;
+      }
     }
   }
 </style>

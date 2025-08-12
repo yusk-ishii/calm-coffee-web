@@ -18,14 +18,24 @@ import Footer from '@components/Footer.astro';
     <title>calm coffee</title>
   </head>
   <body>
-    <Header />
-    <slot />
-    <Footer />
+    <div class="wrapper">
+      <Header />
+      <slot />
+      <Footer />
+    </div>
   </body>
 </html>
 
 <style lang="scss">
   body {
     font-family: 'Montserrat Variable', 'Zen Kaku Gothic New', sans-serif;
+  }
+
+  .wrapper {
+    @include mq-desktop {
+      position: relative;
+      width: 40%;
+      margin-left: auto;
+    }
   }
 </style>
