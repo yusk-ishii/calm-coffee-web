@@ -24,29 +24,31 @@ const { id, title, subTitle, paragraphs } = Astro.props;
 
 <style lang="scss">
   .section {
-    padding: 80px 20px 64px;
+    max-width: var(--max-width);
+    padding: clamp-size(80) clamp-size(20) clamp-size(64);
+    margin: 0 auto;
   }
 
   .title {
-    font-size: 18px;
+    font-size: clamp-size(18);
     font-weight: 300;
     color: var(--text-sub-color);
   }
 
   .subtitle {
-    margin-top: 12px;
-    font-size: 43px;
+    margin-top: clamp-size(12);
+    font-size: clamp-size(43);
     font-weight: 300;
     line-height: 1.4;
     color: var(--text-color);
   }
 
   .description {
-    margin-top: 40px;
-    margin-bottom: 48px;
+    margin-top: clamp-size(40);
+    margin-bottom: clamp-size(48);
 
     p + p {
-      margin-top: 16px;
+      margin-top: clamp-size(16);
     }
   }
 </style>

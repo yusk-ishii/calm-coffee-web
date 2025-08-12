@@ -8,7 +8,7 @@ const id = 'menu';
 const title = 'MENU';
 const subTitle = '季節に寄り添う<br />珈琲たち。';
 const paragraphs = [
-  'その時季の空気や気分に寄り添えるよう、<br />コーヒー豆の選び方や焙煎を少しずつ見直しています。<br />香りと味わいのバランスは、いつも“今”のために。',
+  'その時季の空気や気分に寄り添えるよう、<br />珈琲豆の選び方や焙煎を少しずつ見直しています。<br />香りと味わいのバランスは、いつも“今”のために。',
   'あなたの静かな時間を支える一杯を、<br />今日も丁寧にご用意しています。',
 ];
 ---
@@ -42,28 +42,28 @@ const paragraphs = [
     }
 
     .product-info {
-      margin-top: 12px;
+      margin-top: clamp-size(12);
     }
 
     .product-name {
-      font-size: 16px;
+      font-size: clamp-size(16);
       line-height: 1;
     }
 
     .product-price {
-      margin-top: 8px;
-      font-size: 14px;
+      margin-top: clamp-size(8);
+      font-size: clamp-size(14);
       line-height: 1;
     }
 
     & + & {
-      margin-top: 40px;
+      margin-top: clamp-size(40);
     }
   }
 
   .menu-link {
     width: 100%;
-    margin-top: 40px;
+    margin-top: clamp-size(40);
     text-align: center;
   }
 </style>

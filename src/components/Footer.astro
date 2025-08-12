@@ -9,14 +9,14 @@ import Navigation from '@components/Navigation.astro';
 
 <style lang="scss">
   .footer {
-    padding: 80px 20px 64px;
+    padding: clamp-size(80) clamp-size(20) clamp-size(64);
     color: #fff;
     background-color: var(--main-color);
   }
 
   .copyright {
     display: block;
-    margin-top: 64px;
+    margin-top: clamp-size(64);
     text-align: center;
   }
 </style>

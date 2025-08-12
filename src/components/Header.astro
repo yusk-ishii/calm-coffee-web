@@ -12,12 +12,14 @@ import ShopInfoDetails from '@components/ShopInfoDetails.astro';
   <div class="header-menu">
     <MenuButton />
   </div>
-  <!-- <div class="global-menu">
-    <Navigation />
-    <div class="shop-info-details">
-      <ShopInfoDetails iconColor="#fff" />
+  <div class="global-menu">
+    <div class="global-menu-inner">
+      <Navigation />
+      <div class="shop-info-details">
+        <ShopInfoDetails iconColor="#fff" />
+      </div>
     </div>
-  </div> -->
+  </div>
 </header>
 
 <style lang="scss">
@@ -30,9 +32,16 @@ import ShopInfoDetails from '@components/ShopInfoDetails.astro';
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    padding: clamp-size(10) clamp-size(14);
+  }
 
-    // height: 60px;
-    padding: 10px 14px;
+  .logo {
+    width: clamp-size(138);
+
+    > img {
+      width: 100%;
+      height: auto;
+    }
   }
 
   .global-menu {
@@ -43,17 +52,27 @@ import ShopInfoDetails from '@components/ShopInfoDetails.astro';
     display: none;
     width: 100%;
     height: 100%;
-    padding: 64px 16px;
+    padding: clamp-size(64) clamp-size(16);
     overflow: auto;
     color: #fff;
     background-color: color-mix(in srgb, var(--main-color) 60%, transparent);
     backdrop-filter: blur(20px);
   }
 
+  .global-menu-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
   .shop-info-details {
-    padding: 16px 12px;
-    margin-top: 32px;
+    padding: clamp-size(16) clamp-size(12);
+    margin-top: clamp-size(32);
     border: 1px solid #fff;
-    border-radius: 8px;
+    border-radius: clamp-size(8);
+
+    @include mq('mobile', 'tablet') {
+      display: grid;
+      place-items: center;
+    }
   }
 </style>

@@ -13,16 +13,16 @@ const { text } = Astro.props;
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    width: 168px;
-    padding: 8px;
-    font-size: 14px;
+    width: clamp-size(168);
+    padding: clamp-size(8);
+    font-size: clamp-size(14);
     line-height: 1;
     border-bottom: 1px solid var(--text-color);
 
     &::after {
       display: block;
-      width: 20px;
-      height: 20px;
+      width: clamp-size(20);
+      height: clamp-size(20);
       content: '';
       background-image: url('../assets/icon_external.svg');
       background-repeat: no-repeat;

@@ -30,11 +30,11 @@ import Logo from '@components/Logo.astro';
 
   .logo {
     display: inline-block;
-    width: 168px;
+    width: clamp-size(168);
   }
 
   .nav {
-    padding: 48px 0 32px;
+    padding: clamp-size(48) 0 clamp-size(32);
   }
 
   .nav-list {
@@ -44,26 +44,26 @@ import Logo from '@components/Logo.astro';
     > li {
       > a {
         display: inline-block;
-        padding: 12px 16px;
-        font-size: 16px;
+        padding: clamp-size(12) clamp-size(16);
+        font-size: clamp-size(16);
         line-height: 1;
       }
 
       & + li {
-        margin-top: 16px;
+        margin-top: clamp-size(16);
       }
     }
   }
 
   .sns {
-    margin-top: 32px;
+    margin-top: clamp-size(32);
 
     > .sns-icon {
       display: inline-block;
 
       img {
-        width: 40px;
-        height: 40px;
+        width: clamp-size(40);
+        height: clamp-size(40);
       }
     }
   }

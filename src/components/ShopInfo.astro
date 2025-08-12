@@ -18,21 +18,27 @@ import ShopInfoImg from '@assets/image_shop-info.jpg';
 
 <style lang="scss">
   .store-info {
-    padding-bottom: 80px;
-    margin-top: 48px;
+    padding-bottom: clamp-size(80);
+    margin-top: clamp-size(48);
   }
 
   .store-info-image {
-    margin-bottom: 48px;
+    margin-bottom: clamp-size(48);
 
     img {
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 1.414 /1;
     }
   }
 
   .shop-info-details {
-    padding: 0 20px;
-    margin-top: 48px;
+    max-width: var(--max-width);
+    padding: 0 clamp-size(20);
+    margin: clamp-size(48) auto 0;
+
+    @include mq('mobile', 'tablet') {
+      display: grid;
+      place-items: center;
+    }
   }
 
   .link {
@@ -44,7 +50,7 @@ import ShopInfoImg from '@assets/image_shop-info.jpg';
       left: 0;
       display: block;
       width: 100%;
-      height: 1px;
+      height: clamp-size(1);
       content: '';
       background-color: var(--text-color);
     }
@@ -52,7 +58,7 @@ import ShopInfoImg from '@assets/image_shop-info.jpg';
 
   .google-map {
     width: 100%;
-    margin-top: 32px;
+    margin-top: clamp-size(32);
     text-align: center;
   }
 </style>

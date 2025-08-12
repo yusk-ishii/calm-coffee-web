@@ -1,12 +1,9 @@
 ---
 import catchPhrase from '@assets/fv_catch-phrase.svg';
-import FV from '@assets/fv_01_sp.jpg';
 ---
 
 <section class="fv">
-  <div class="fv-image">
-    <img src={FV.src} alt="calm coffee" />
-  </div>
+  <div class="fv-image"></div>
   <h1 class="catchphrase">
     <img src={catchPhrase.src} alt="波と珈琲と静けさと。" />
   </h1>
@@ -24,17 +21,9 @@ import FV from '@assets/fv_01_sp.jpg';
     position: relative;
     width: 100%;
     height: 50%;
-    overflow: hidden;
-
-    img {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      width: 422px; // JSで計算する
-      max-width: initial;
-      aspect-ratio: 1 / 1;
-      transform: translate(-50%, 0);
-    }
+    background-image: url('../assets/fv_01_sp.jpg');
+    background-position: center;
+    background-size: cover;
   }
 
   .catchphrase {
@@ -44,7 +33,7 @@ import FV from '@assets/fv_01_sp.jpg';
     height: 50%;
 
     img {
-      width: 82px;
+      width: clamp-size(82);
     }
   }
 </style>

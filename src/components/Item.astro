@@ -50,7 +50,7 @@ const paragraphs = [
   .item-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px 14px;
+    gap: clamp-size(24) clamp-size(14);
   }
 
   .product {
@@ -59,17 +59,17 @@ const paragraphs = [
     }
 
     .product-info {
-      margin-top: 8px;
+      margin-top: clamp-size(8);
     }
 
     .product-name {
-      font-size: 12px;
+      font-size: clamp-size(12);
       line-height: 1;
     }
 
     .product-price {
-      margin-top: 4px;
-      font-size: 10px;
+      margin-top: clamp-size(4);
+      font-size: clamp-size(10);
       line-height: 1;
     }
   }

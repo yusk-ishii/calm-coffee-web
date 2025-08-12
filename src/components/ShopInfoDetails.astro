@@ -59,11 +59,15 @@ const { iconColor = '#282D30' } = Astro.props;
 </dl>
 
 <style lang="scss">
+  .details {
+    width: fit-content;
+  }
+
   .detail {
     display: flex;
 
     > dt {
-      margin-right: 8px;
+      margin-right: clamp-size(8);
     }
 
     > dd {
@@ -73,18 +77,18 @@ const { iconColor = '#282D30' } = Astro.props;
       line-height: 1;
 
       > span + span {
-        margin-top: 8px;
+        margin-top: clamp-size(8);
       }
     }
 
     & + .detail {
-      margin-top: 16px;
+      margin-top: clamp-size(16);
     }
   }
 
   .icon {
     display: block;
-    width: 16px;
-    height: 16px;
+    width: clamp-size(16);
+    height: clamp-size(16);
   }
 </style>

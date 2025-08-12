@@ -36,8 +36,8 @@ import StoryImg from '@assets/image_story.jpg';
 
 <style lang="scss">
   .story {
-    padding-top: 80px;
-    padding-bottom: 64px;
+    padding-top: clamp-size(80);
+    padding-bottom: clamp-size(64);
   }
 
   .story-title {
@@ -45,26 +45,26 @@ import StoryImg from '@assets/image_story.jpg';
 
     img {
       display: inline-block;
-      width: 250px;
+      width: clamp-size(250);
       height: auto;
     }
   }
 
   .story-text {
-    margin-top: 48px;
-    font-size: 18px;
+    margin-top: clamp-size(48);
+    font-size: clamp-size(18);
     text-align: center;
 
     p + p {
-      margin-top: 40px;
+      margin-top: clamp-size(40);
     }
   }
 
   .story-image {
-    margin-top: 104px;
+    margin-top: clamp-size(104);
 
     img {
-      aspect-ratio: 1.414 / 1;
+      aspect-ratio: 1.618 / 1;
     }
   }
 </style>

@@ -1,0 +1,89 @@
+// =============================================================================
+// MediaQueries
+// =============================================================================
+@use 'sass:map';
+
+/// ブレークポイントリスト
+$breakpoints: (
+  desktop: 1024px,
+  tablet: 769px,
+  mobile: 441px,
+) !default;
+
+/// メディアタイプ（default: screen）
+$media-type: screen !default;
+
+/// ブレークポイントの数値取得メソッド
+/// @param {String} $name - $breakpointsのキー名
+@function get-breakpoint-width($name, $breakpoints: $breakpoints) {
+  @if map.has-key($breakpoints, $name) {
+    @return map.get($breakpoints, $name);
+  } @else {
+    @warn "Breakpoint #{$name} wasn't found in $breakpoints.";
+    @return null;
+  }
+}
+
+/// メディアクエリ生成
+/// @param {String | Boolean} $from [false] - min-widthに設定される値
+/// @param {String | Boolean} $until [false] - max-widthに設定される値
+/// @param {String | Boolean} $and [false] - 追加のメディアクエリ
+/// @ignore @param {Map} $breakpoints [$breakpoints]
+@mixin mq(
+  $from: false,
+  $until: false,
+  $and: false,
+  $breakpoints: $breakpoints
+) {
+  $min-width: 0;
+  $max-width: 0;
+  $media-query: '';
+
+  @if $from {
+    /* stylelint-disable-next-line scss/no-global-function-names */
+    @if type-of($from) == number {
+      $min-width: $from + 'px';
+    } @else {
+      $min-width: get-breakpoint-width($from, $breakpoints);
+    }
+  }
+
+  @if $until {
+    /* stylelint-disable-next-line scss/no-global-function-names */
+    @if type-of($until) == number {
+      $max-width: $until + 'px';
+    } @else {
+      $max-width: get-breakpoint-width($until, $breakpoints) - 1px;
+    }
+  }
+
+  @if $min-width != 0 {
+    $media-query: '#{$media-query} and (min-width: #{$min-width})';
+  }
+
+  @if $max-width != 0 {
+    $media-query: '#{$media-query} and (max-width: #{$max-width})';
+  }
+
+  @if $and {
+    $media-query: '#{$media-query} and #{$and}';
+  }
+
+  @media #{$media-type + $media-query} {
+    @content;
+  }
+}
+
+/// PC用のメディアクエリ生成
+@mixin mq-desktop() {
+  @include mq($from: tablet) {
+    @content;
+  }
+}
+
+/// SP用のメディアクエリ生成
+@mixin mq-mobile() {
+  @include mq($until: tablet) {
+    @content;
+  }
+}
