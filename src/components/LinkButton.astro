@@ -1,0 +1,32 @@
+---
+interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<a href="#" class="link">{text}</a>
+
+<style lang="scss">
+  .link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 168px;
+    padding: 8px;
+    font-size: 14px;
+    line-height: 1;
+    border-bottom: 1px solid var(--text-color);
+
+    &::after {
+      display: block;
+      width: 20px;
+      height: 20px;
+      content: '';
+      background-image: url('../assets/icon_external.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+</style>

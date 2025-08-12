@@ -1,1 +1,22 @@
-<footer>フッター</footer>
+---
+import Navigation from '@components/Navigation.astro';
+---
+
+<footer class="footer">
+  <Navigation />
+  <small class="copyright">©2025 calm coffee</small>
+</footer>
+
+<style lang="scss">
+  .footer {
+    padding: 80px 20px 64px;
+    color: #fff;
+    background-color: var(--main-color);
+  }
+
+  .copyright {
+    display: block;
+    margin-top: 64px;
+    text-align: center;
+  }
+</style>

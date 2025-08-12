@@ -23,6 +23,10 @@ const { id, title, subTitle, paragraphs } = Astro.props;
 </section>
 
 <style lang="scss">
+  .section {
+    padding: 80px 20px 64px;
+  }
+
   .title {
     font-size: 18px;
     font-weight: 300;
@@ -30,6 +34,7 @@ const { id, title, subTitle, paragraphs } = Astro.props;
   }
 
   .subtitle {
+    margin-top: 12px;
     font-size: 43px;
     font-weight: 300;
     line-height: 1.4;

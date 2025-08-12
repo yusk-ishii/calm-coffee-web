@@ -1,0 +1,90 @@
+---
+import IconTime from '@components/icons/IconTime.astro';
+import IconMap from '@components/icons/IconMap.astro';
+import IconPhone from '@components/icons/IconPhone.astro';
+import IconCard from '@components/icons/IconCard.astro';
+import IconShop from '@components/icons/IconShop.astro';
+
+interface Props {
+  iconColor?: string;
+}
+
+const { iconColor = '#282D30' } = Astro.props;
+---
+
+<dl class="details">
+  <div class="detail">
+    <dt class="icon" aria-label="営業時間">
+      <IconTime color={iconColor} />
+    </dt>
+    <dd>
+      <span>8:00 - 18:00（定休日：水曜日）</span>
+      <span
+        >最新情報は<a class="link" href="https://www.instagram.com/" target="_blank">Instagram</a
+        >をご確認ください</span
+      >
+    </dd>
+  </div>
+  <div class="detail">
+    <dt class="icon" aria-label="住所">
+      <IconMap color={iconColor} />
+    </dt>
+    <dd>
+      <span>
+        〒248-0026 <a class="link" href="https://maps.app.goo.gl/fVz5B7Dtum7vN1vz8" target="_blank"
+          >神奈川県鎌倉市七里ガ浜0-0-0</a
+        >
+      </span>
+      <span>江ノ電「七里ヶ浜駅」より徒歩4分</span>
+    </dd>
+  </div>
+  <div class="detail">
+    <dt class="icon" aria-label="電話番号">
+      <IconPhone color={iconColor} />
+    </dt>
+    <dd><a href="tel:0467000000">0467-00-0000</a></dd>
+  </div>
+  <div class="detail">
+    <dt class="icon" aria-label="支払い方法">
+      <IconCard color={iconColor} />
+    </dt>
+    <dd>現金／クレジット／交通系IC／PayPay</dd>
+  </div>
+  <div class="detail">
+    <dt class="icon" aria-label="店舗情報">
+      <IconShop color={iconColor} />
+    </dt>
+    <dd>席数：15席、近隣にコインパーキングあり</dd>
+  </div>
+</dl>
+
+<style lang="scss">
+  .detail {
+    display: flex;
+
+    > dt {
+      margin-right: 8px;
+    }
+
+    > dd {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      line-height: 1;
+
+      > span + span {
+        margin-top: 8px;
+      }
+    }
+
+    & + .detail {
+      margin-top: 16px;
+    }
+  }
+
+  .icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+  }
+</style>

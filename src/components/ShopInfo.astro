@@ -1,0 +1,58 @@
+---
+import ShopInfoDetails from '@components/ShopInfoDetails.astro';
+import LinkButton from '@components/LinkButton.astro';
+import ShopInfoImg from '@assets/image_shop-info.jpg';
+---
+
+<section id="store-info" class="store-info" aria-label="店舗情報">
+  <div class="store-info-image">
+    <img src={ShopInfoImg.src} alt="鎌倉の風景" />
+  </div>
+  <div class="shop-info-details">
+    <ShopInfoDetails />
+  </div>
+  <div class="google-map">
+    <LinkButton text="Google MAPで見る" />
+  </div>
+</section>
+
+<style lang="scss">
+  .store-info {
+    padding-bottom: 80px;
+    margin-top: 48px;
+  }
+
+  .store-info-image {
+    margin-bottom: 48px;
+
+    img {
+      aspect-ratio: 1 / 1;
+    }
+  }
+
+  .shop-info-details {
+    padding: 0 20px;
+    margin-top: 48px;
+  }
+
+  .link {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 1px;
+      content: '';
+      background-color: var(--text-color);
+    }
+  }
+
+  .google-map {
+    width: 100%;
+    margin-top: 32px;
+    text-align: center;
+  }
+</style>

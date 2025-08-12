@@ -1,5 +1,9 @@
 ---
-import Section from './Section.astro';
+import Section from '@components/Section.astro';
+import Item01Img from '@assets/image_item01.jpg';
+import Item02Img from '@assets/image_item02.jpg';
+import Item03Img from '@assets/image_item03.jpg';
+import Item04Img from '@assets/image_item04.jpg';
 
 const id = 'item';
 const title = 'ITEM';
@@ -12,44 +16,28 @@ const paragraphs = [
 <Section id={id} title={title} subTitle={subTitle} paragraphs={paragraphs}>
   <ul class="item-list">
     <li class="product">
-      <img
-        src="https://images.unsplash.com/photo-1751554807233-92e862c4f36a"
-        alt=""
-        class="product-image"
-      />
+      <img src={Item01Img.src} alt="" class="product-image" />
       <div class="product-info">
         <h3 class="product-name">Calmブレンド</h3>
         <p class="product-price">100gから販売しております。</p>
       </div>
     </li>
     <li class="product">
-      <img
-        src="https://images.unsplash.com/photo-1751554807233-92e862c4f36a"
-        alt=""
-        class="product-image"
-      />
+      <img src={Item02Img.src} alt="" class="product-image" />
       <div class="product-info">
         <h3 class="product-name">エチオピアブレンド</h3>
         <p class="product-price">100gから販売しております。</p>
       </div>
     </li>
     <li class="product">
-      <img
-        src="https://images.unsplash.com/photo-1751554807233-92e862c4f36a"
-        alt=""
-        class="product-image"
-      />
+      <img src={Item03Img.src} alt="" class="product-image" />
       <div class="product-info">
         <h3 class="product-name">Calmブレンド 1袋</h3>
         <p class="product-price">¥200-（税込）</p>
       </div>
     </li>
     <li class="product">
-      <img
-        src="https://images.unsplash.com/photo-1751554807233-92e862c4f36a"
-        alt=""
-        class="product-image"
-      />
+      <img src={Item04Img.src} alt="" class="product-image" />
       <div class="product-info">
         <h3 class="product-name">エチオピアブレンド 1袋</h3>
         <p class="product-price">¥200-（税込）</p>

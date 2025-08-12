@@ -1,5 +1,8 @@
 ---
-import Section from './Section.astro';
+import Section from '@components/Section.astro';
+import LinkButton from '@components/LinkButton.astro';
+import Menu01Img from '@assets/image_menu01.jpg';
+import Menu02Img from '@assets/image_menu02.jpg';
 
 const id = 'menu';
 const title = 'MENU';
@@ -13,29 +16,23 @@ const paragraphs = [
 <Section id={id} title={title} subTitle={subTitle} paragraphs={paragraphs}>
   <ul class="menu-list">
     <li class="product">
-      <img
-        src="https://images.unsplash.com/photo-1751554807233-92e862c4f36a"
-        alt="Calmブレンド"
-        class="product-image"
-      />
+      <img src={Menu01Img.src} alt="Calmブレンド" class="product-image" />
       <div class="product-info">
-        <h3 class="product-name">Calmブレンド</h3>
+        <h3 class="product-name">calmブレンド</h3>
         <p class="product-price">Regular ¥430- / Large ¥480-</p>
       </div>
     </li>
     <li class="product">
-      <img
-        src="https://images.unsplash.com/photo-1751554807233-92e862c4f36a"
-        alt="カフェラテ"
-        class="product-image"
-      />
+      <img src={Menu02Img.src} alt="カフェラテ" class="product-image" />
       <div class="product-info">
         <h3 class="product-name">カフェラテ</h3>
         <p class="product-price">Regular ¥490 / Large ¥570-</p>
       </div>
     </li>
   </ul>
-  <a href="#" class="menu-link">全メニューを見る</a>
+  <div class="menu-link">
+    <LinkButton text="全メニューを見る" />
+  </div>
 </Section>
 
 <style lang="scss">
@@ -62,5 +59,11 @@ const paragraphs = [
     & + & {
       margin-top: 40px;
     }
+  }
+
+  .menu-link {
+    width: 100%;
+    margin-top: 40px;
+    text-align: center;
   }
 </style>

@@ -1,0 +1,70 @@
+---
+import StoryTitle from '@assets/story_title.svg';
+import StoryImg from '@assets/image_story.jpg';
+---
+
+<section id="story" class="story">
+  <h2 class="story-title">
+    <img src={StoryTitle.src} alt="心がほどける鎌倉の一杯。" />
+  </h2>
+  <div class="story-text">
+    <p>
+      <span>忙しい日々の合間に、</span><br />
+      <span>ふと心を休めたくなる瞬間がある。</span>
+    </p>
+    <p>
+      <span>潮の香りを乗せた風が頬をなで、</span><br />
+      <span>七里ヶ浜の波音が静かに寄せては返す。</span>
+    </p>
+    <p>
+      <span>その穏やかなリズムに合わせるように、</span><br />
+      <span>一杯の珈琲が心をほどいていく。</span>
+    </p>
+    <p>
+      <span>そんな時間を届けたくて、</span><br />
+      <span>calm coffee は生まれました。</span>
+    </p>
+    <p>
+      <span>あなたの日常に静かな余白を添える、</span><br />
+      <span>鎌倉の一杯をお楽しみください。</span>
+    </p>
+  </div>
+  <div class="story-image">
+    <img src={StoryImg.src} alt="story image" />
+  </div>
+</section>
+
+<style lang="scss">
+  .story {
+    padding-top: 80px;
+    padding-bottom: 64px;
+  }
+
+  .story-title {
+    text-align: center;
+
+    img {
+      display: inline-block;
+      width: 250px;
+      height: auto;
+    }
+  }
+
+  .story-text {
+    margin-top: 48px;
+    font-size: 18px;
+    text-align: center;
+
+    p + p {
+      margin-top: 40px;
+    }
+  }
+
+  .story-image {
+    margin-top: 104px;
+
+    img {
+      aspect-ratio: 1.414 / 1;
+    }
+  }
+</style>

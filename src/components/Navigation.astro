@@ -1,0 +1,70 @@
+---
+import Instagram from '@assets/icon_instagram.svg';
+import Logo from '@components/Logo.astro';
+---
+
+<div class="global-navigation">
+  <div class="logo">
+    <Logo color="#fff" />
+  </div>
+  <nav class="nav" aria-label="フッターナビゲーション">
+    <ul class="nav-list">
+      <li><a href="#story">STORY</a></li>
+      <li><a href="#menu">MENU</a></li>
+      <li><a href="#item">ITEM</a></li>
+      <li><a href="#store-info">STORE INFO</a></li>
+      <li><a href="/contact">CONTACT</a></li>
+    </ul>
+    <div class="sns">
+      <a class="sns-icon" href="https://instagram.com/" aria-label="Instagram" target="_blank">
+        <img src={Instagram.src} alt="instagram" />
+      </a>
+    </div>
+  </nav>
+</div>
+
+<style lang="scss">
+  .global-navigation {
+    text-align: center;
+  }
+
+  .logo {
+    display: inline-block;
+    width: 168px;
+  }
+
+  .nav {
+    padding: 48px 0 32px;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+
+    > li {
+      > a {
+        display: inline-block;
+        padding: 12px 16px;
+        font-size: 16px;
+        line-height: 1;
+      }
+
+      & + li {
+        margin-top: 16px;
+      }
+    }
+  }
+
+  .sns {
+    margin-top: 32px;
+
+    > .sns-icon {
+      display: inline-block;
+
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+</style>
