@@ -91,4 +91,19 @@ const { iconColor = '#282D30' } = Astro.props;
     width: clamp-size(16);
     height: clamp-size(16);
   }
+
+  .link {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: clamp-size(1);
+      content: '';
+      background-color: var(--text-color);
+    }
+  }
 </style>
