@@ -2,11 +2,12 @@
 // MediaQueries
 // =============================================================================
 @use 'sass:map';
+@use "sass:meta";
 
 /// ブレークポイントリスト
 $breakpoints: (
-  desktop: 1024px,
-  tablet: 769px,
+  desktop: 1440px,
+  tablet: 1025px,
   mobile: 441px,
 ) !default;
 
@@ -40,8 +41,7 @@ $media-type: screen !default;
   $media-query: '';
 
   @if $from {
-    /* stylelint-disable-next-line scss/no-global-function-names */
-    @if type-of($from) == number {
+    @if meta.type-of($from) == number {
       $min-width: $from + 'px';
     } @else {
       $min-width: get-breakpoint-width($from, $breakpoints);
@@ -49,8 +49,7 @@ $media-type: screen !default;
   }
 
   @if $until {
-    /* stylelint-disable-next-line scss/no-global-function-names */
-    @if type-of($until) == number {
+    @if meta.type-of($until) == number {
       $max-width: $until + 'px';
     } @else {
       $max-width: get-breakpoint-width($until, $breakpoints) - 1px;

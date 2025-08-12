@@ -1,5 +1,5 @@
 :root {
-  --max-width: 540px;
+  --sp-max-width: 640px;
   --main-color: #96B7C0;
   --text-color: #282D30;
   --text-sub-color: #B7BEC3;
@@ -14,5 +14,5 @@ body {
 
 img {
   display: block;
-  max-width: 100%;
+  width: 100%;
 }
