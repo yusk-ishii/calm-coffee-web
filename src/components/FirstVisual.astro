@@ -1,6 +1,7 @@
 ---
 import catchPhrase from '@assets/fv_catch-phrase.svg';
 import Logo from '@components/Logo.astro';
+import LogoType from '@components/LogoType.astro';
 ---
 
 <section class="fv">
@@ -9,7 +10,12 @@ import Logo from '@components/Logo.astro';
   </div>
   <div class="fv-content">
     <div class="fv-logo">
-      <Logo />
+      <span class="logo">
+        <Logo />
+      </span>
+      <span class="logo-type">
+        <LogoType color="#fff" />
+      </span>
     </div>
     <h1 class="catchphrase">
       <img src={catchPhrase.src} alt="波と珈琲と静けさと。" />
@@ -76,13 +82,29 @@ import Logo from '@components/Logo.astro';
     }
   }
 
-  .fv-logo {
+  .logo {
     display: none;
 
     @include mq-desktop {
       display: block;
       width: 260px;
       margin: 0 auto;
+    }
+  }
+
+  .logo-type {
+    position: absolute;
+    top: 24px;
+    left: 20px;
+    width: clamp-size(138);
+
+    > img {
+      width: 100%;
+      height: auto;
+    }
+
+    @include mq-desktop {
+      display: none;
     }
   }
 
