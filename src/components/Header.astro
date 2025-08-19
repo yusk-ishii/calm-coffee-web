@@ -42,7 +42,7 @@ import ShopInfoDetails from '@components/ShopInfoDetails.astro';
     overflow: auto;
     overscroll-behavior: none;
     color: #fff;
-    background-color: color-mix(in srgb, var(--main-color) 60%, transparent);
+    background-color: color-mix(in srgb, var(--color-main) 60%, transparent);
     backdrop-filter: blur(20px);
 
     @include mq-desktop {
@@ -51,12 +51,12 @@ import ShopInfoDetails from '@components/ShopInfoDetails.astro';
   }
 
   .global-menu-inner {
-    max-width: var(--sp-max-width);
+    max-width: var(--sp-content-width);
     padding: clamp-size(64) clamp-size(20);
     margin: 0 auto;
 
     @include mq-desktop {
-      max-width: var(--pc-max-width);
+      max-width: var(--pc-content-width);
       padding: 64px 40px;
     }
   }

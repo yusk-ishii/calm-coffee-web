@@ -1,11 +1,18 @@
 ---
 import 'destyle.css';
 import '@styles/global.scss';
+import 'yakuhanjp/dist/css/yakuhanmp_s.css';
 import '@fontsource/zen-kaku-gothic-new/300.css';
 import '@fontsource/zen-kaku-gothic-new/400.css';
 import '@fontsource-variable/montserrat';
 import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
+
+interface Props {
+  title?: string;
+}
+
+const { title = 'calm coffee' } = Astro.props;
 ---
 
 <!doctype html>
@@ -15,12 +22,14 @@ import Footer from '@components/Footer.astro';
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="format-detection" content="telephone=no" />
-    <title>calm coffee</title>
+    <title>{title}</title>
   </head>
   <body>
     <div class="wrapper">
       <Header />
-      <slot />
+      <main>
+        <slot />
+      </main>
       <Footer />
     </div>
   </body>
@@ -28,14 +37,23 @@ import Footer from '@components/Footer.astro';
 
 <style lang="scss">
   body {
-    font-family: 'Montserrat Variable', 'Zen Kaku Gothic New', sans-serif;
+    font-family: YakuHanMPs, 'Montserrat Variable', 'Zen Kaku Gothic New', sans-serif;
   }
 
   .wrapper {
     @include mq-desktop {
       position: relative;
-      width: 40%;
+      width: var(--pc-content-width);
       margin-left: auto;
+    }
+  }
+
+  main {
+    width: 100%;
+    padding-bottom: clamp-size(104);
+
+    @include mq-desktop {
+      padding-bottom: 104px;
     }
   }
 </style>

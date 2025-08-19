@@ -1,16 +1,16 @@
 :root {
-  --pc-max-width: 540px;
-  --sp-max-width: 640px;
-  --main-color: #96B7C0;
-  --text-color: #282D30;
-  --text-sub-color: #B7BEC3;
+  --pc-content-width: 540px;
+  --sp-content-width: 640px;
+  --color-main: #96B7C0;
+  --color-text: #282D30;
+  --color-sub-text: #B7BEC3;
 }
 
 body {
   font-size: clamp-size(14);
   font-weight: 400;
   line-height: 1.8;
-  color: var(--text-color);
+  color: var(--color-text);
 
   @include mq-desktop {
     font-size: 18px;

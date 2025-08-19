@@ -30,11 +30,12 @@ import ShopInfoImg from '@assets/image_shop-info.jpg';
   .store-info-image {
     img {
       aspect-ratio: 1.414 /1;
+      object-fit: cover;
     }
   }
 
   .shop-info-details {
-    max-width: var(--sp-max-width);
+    max-width: var(--sp-content-width);
     padding: 0 clamp-size(20);
     margin: clamp-size(48) auto 0;
 
@@ -44,7 +45,7 @@ import ShopInfoImg from '@assets/image_shop-info.jpg';
     }
 
     @include mq-desktop {
-      max-width: var(--pc-max-width);
+      max-width: var(--pc-content-width);
       padding: 0 40px;
       margin: 48px auto 0;
     }

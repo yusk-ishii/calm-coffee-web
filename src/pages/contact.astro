@@ -1,8 +1,120 @@
 ---
-import BaseLayout from '@layouts/Layout.astro';
+import Layout from '@layouts/Layout.astro';
+import PageHeader from '@components/PageHeader.astro';
 ---
 
-<BaseLayout>
-  <p>contact</p>
-  <a href="/">TOP</a>
-</BaseLayout>
+<Layout title="contact">
+  <div class="contact">
+    <PageHeader title="CONTACT" />
+    <div class="content">
+      <p>
+        営業時間やメニューのご質問、取材のご相談など、<br />
+        お気軽にお問い合わせください。
+      </p>
+      <form action="/contact" method="post">
+        <div class="field">
+          <label for="name">お名前</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            placeholder="山田 太郎"
+            autocomplete="name"
+            required
+          />
+        </div>
+
+        <div class="field">
+          <label for="email">メールアドレス</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="calm-coffee@example.com"
+            autocomplete="email"
+            inputmode="email"
+            required
+          />
+        </div>
+
+        <div class="field">
+          <label for="subject">件名</label>
+          <input
+            id="subject"
+            name="subject"
+            type="text"
+            placeholder="メニューや店舗について"
+            required
+          />
+        </div>
+
+        <div class="field">
+          <label for="message">お問い合わせ内容</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="submit">お問い合わせを送信</button>
+      </form>
+    </div>
+  </div>
+</Layout>
+
+<style lang="scss">
+  .content {
+    padding: clamp-size(32) clamp-size(20);
+
+    @include mq-desktop {
+      padding: 120px 40px 40px;
+    }
+  }
+
+  .field {
+    position: relative;
+    margin-top: clamp-size(32);
+
+    > label {
+      position: absolute;
+      top: 8px;
+      left: 10px;
+      font-size: 10px;
+      line-height: 1;
+      color: var(--color-text);
+      pointer-events: none;
+    }
+
+    > textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    > input,
+    > textarea {
+      width: 100%;
+      padding: 25px 10px 8px;
+      outline: 1px solid var(--color-text);
+
+      &::placeholder {
+        color: var(--color-sub-text);
+      }
+
+      &:focus {
+        outline-width: 2px;
+      }
+    }
+
+    & + & {
+      margin-top: clamp-size(12);
+    }
+  }
+
+  .submit {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: clamp-size(60);
+    margin-top: clamp-size(40);
+    font-size: clamp-size(14);
+    color: #fff;
+    background-color: var(--color-main);
+  }
+</style>

@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '@layouts/Layout.astro';
+import Layout from '@layouts/Layout.astro';
 import FirstVisual from '@components/FirstVisual.astro';
 import Story from '@components/Story.astro';
 import Menu from '@components/Menu.astro';
@@ -7,25 +7,10 @@ import Item from '@components/Item.astro';
 import ShopInfo from '@components/ShopInfo.astro';
 ---
 
-<BaseLayout>
-  <main class="main">
-    <FirstVisual />
-    <div class="content">
-      <Story />
-      <Menu />
-      <Item />
-      <ShopInfo />
-    </div>
-  </main>
-</BaseLayout>
-
-<style lang="scss">
-  .content {
-    width: 100%;
-    padding-bottom: clamp-size(104);
-
-    @include mq-desktop {
-      padding-bottom: 104px;
-    }
-  }
-</style>
+<Layout>
+  <FirstVisual />
+  <Story />
+  <Menu />
+  <Item />
+  <ShopInfo />
+</Layout>

@@ -4,30 +4,33 @@ import StoryImg from '@assets/image_story.jpg';
 ---
 
 <section id="story" class="story">
-  <h2 class="story-title">
-    <img src={StoryTitle.src} alt="心がほどける鎌倉の一杯。" />
-  </h2>
-  <div class="story-body">
-    <p class="story-text">
-      <span>忙しい日々の合間に、</span>
-      <span>ふと心を休めたくなる瞬間がある。</span>
-    </p>
-    <p class="story-text">
-      <span>潮の香りを乗せた風が頬をなで、</span>
-      <span>七里ヶ浜の波音が静かに寄せては返す。</span>
-    </p>
-    <p class="story-text">
-      <span>その穏やかなリズムに合わせるように、</span>
-      <span>一杯の珈琲が心をほどいていく。</span>
-    </p>
-    <p class="story-text">
-      <span>そんな時間を届けたくて、</span>
-      <span>calm coffee は生まれました。</span>
-    </p>
-    <p class="story-text">
-      <span>あなたの日常に静かな余白を添える、</span>
-      <span>鎌倉の一杯をお楽しみください。</span>
-    </p>
+  <div class="story-wrapper">
+    <h2 class="story-title">
+      <img src={StoryTitle.src} alt="心がほどける鎌倉の一杯。" />
+    </h2>
+    <div class="story-body">
+      <p class="story-text">
+        <span>忙しさに追われる毎日。</span>
+        <span>そんな日々の合間に訪れる、</span>
+        <span>ほっと息をつく時間。</span>
+      </p>
+      <p class="story-text">
+        <span>「心がほどける、静かな余白を届けたい」</span>
+        <span>そんな想いから、calm coffeeは生まれました。</span>
+      </p>
+      <p class="story-text">
+        <span>潮の香りを乗せた風が頬を撫で、</span>
+        <span>七里ヶ浜の波音が静かに寄せては返す。</span>
+      </p>
+      <p class="story-text">
+        <span>その穏やかなリズムに合わせるように、</span>
+        <span>一杯の珈琲が心をほどいていく。</span>
+      </p>
+      <p class="story-text">
+        <span>ここでしか味わえない、</span>
+        <span>鎌倉の一杯をお楽しみください。</span>
+      </p>
+    </div>
   </div>
   <div class="story-image">
     <img src={StoryImg.src} alt="story image" />
@@ -36,7 +39,7 @@ import StoryImg from '@assets/image_story.jpg';
 
 <style lang="scss">
   .story {
-    padding-top: clamp-size(80);
+    padding-top: clamp-size(40);
     padding-bottom: clamp-size(64);
 
     @include mq-desktop {
@@ -45,9 +48,18 @@ import StoryImg from '@assets/image_story.jpg';
     }
   }
 
-  .story-title {
-    text-align: center;
+  .story-wrapper {
+    max-width: var(--sp-content-width);
+    padding: clamp-size(40) clamp-size(20) clamp-size(64);
+    margin: 0 auto;
 
+    @include mq-desktop {
+      max-width: var(--pc-content-width);
+      padding: 64px 40px;
+    }
+  }
+
+  .story-title {
     img {
       display: inline-block;
       width: clamp-size(250);
@@ -63,7 +75,6 @@ import StoryImg from '@assets/image_story.jpg';
 
   .story-body {
     margin-top: clamp-size(48);
-    text-align: center;
 
     @include mq-desktop {
       margin-top: 64px;
@@ -73,7 +84,7 @@ import StoryImg from '@assets/image_story.jpg';
   .story-text {
     display: flex;
     flex-direction: column;
-    font-size: clamp-size(18);
+    font-size: clamp-size(16);
 
     & + & {
       margin-top: clamp-size(40);
@@ -84,7 +95,7 @@ import StoryImg from '@assets/image_story.jpg';
     }
 
     @include mq-desktop {
-      font-size: 21px;
+      font-size: 18px;
 
       & + & {
         margin-top: 48px;
@@ -100,7 +111,8 @@ import StoryImg from '@assets/image_story.jpg';
     margin-top: clamp-size(104);
 
     img {
-      aspect-ratio: 1.618 / 1;
+      aspect-ratio: 1.414 / 1;
+      object-fit: cover;
     }
 
     @include mq-desktop {

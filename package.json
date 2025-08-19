@@ -20,7 +20,8 @@
     "@fontsource-variable/montserrat": "^5.2.6",
     "@fontsource/zen-kaku-gothic-new": "^5.2.6",
     "astro": "^5.12.3",
-    "destyle.css": "^4.0.1"
+    "destyle.css": "^4.0.1",
+    "yakuhanjp": "^4.1.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",

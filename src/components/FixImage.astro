@@ -1,0 +1,34 @@
+<div class="fix-image">
+  <div></div>
+</div>
+
+<style lang="scss">
+  .fix-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+
+    @include mq-desktop {
+      position: fixed;
+      z-index: -1;
+      width: calc(100vw - var(--pc-content-width));
+      height: 100%;
+      padding: 10px;
+      background-color: color-mix(in srgb, var(--color-text) 5%, transparent);
+    }
+
+    > div {
+      width: 100%;
+      height: 100%;
+      background-image: url('../assets/fv_01_sp.jpg');
+      background-position: center;
+      background-size: cover;
+
+      @include mq-desktop {
+        border-radius: 8px;
+      }
+    }
+  }
+</style>
