@@ -1,20 +1,43 @@
 ---
-import Navigation from '@components/Navigation.astro';
+import Instagram from '@assets/icon_instagram.svg';
+import Logo from '@components/Logo.astro';
 ---
 
 <footer class="footer">
-  <Navigation />
+  <div class="logo">
+    <Logo color="#fff" />
+  </div>
+  <div class="sns">
+    <a class="sns-icon" href="https://instagram.com/" aria-label="Instagram" target="_blank">
+      <img src={Instagram.src} alt="instagram" />
+    </a>
+  </div>
   <small class="copyright">©2025 calm coffee</small>
 </footer>
 
 <style lang="scss">
   .footer {
-    padding: clamp-size(80) clamp-size(20) clamp-size(64);
+    padding: clamp-size(64) clamp-size(20) clamp-size(40);
     color: #fff;
+    text-align: center;
     background-color: var(--color-main);
+  }
 
-    @include mq-desktop {
-      padding: 80px 20px 64px;
+  .logo {
+    display: inline-block;
+    width: clamp-size(140);
+  }
+
+  .sns {
+    margin-top: clamp-size(32);
+
+    > .sns-icon {
+      display: inline-block;
+
+      img {
+        width: clamp-size(40);
+        height: clamp-size(40);
+      }
     }
   }
 
@@ -22,9 +45,5 @@ import Navigation from '@components/Navigation.astro';
     display: block;
     margin-top: clamp-size(64);
     text-align: center;
-
-    @include mq-desktop {
-      margin-top: 80px;
-    }
   }
 </style>

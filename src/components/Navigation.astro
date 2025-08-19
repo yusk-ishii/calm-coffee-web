@@ -1,12 +1,8 @@
 ---
 import Instagram from '@assets/icon_instagram.svg';
-import Logo from '@components/Logo.astro';
 ---
 
 <div class="global-navigation">
-  <div class="logo">
-    <Logo color="#fff" />
-  </div>
   <nav class="nav" aria-label="フッターナビゲーション">
     <ul class="nav-list">
       <li><a href="#story">STORY</a></li>
@@ -54,9 +50,6 @@ import Logo from '@components/Logo.astro';
         display: inline-block;
         padding: clamp-size(12) clamp-size(16);
         font-size: clamp-size(16);
-
-        // font-size: clamp(0.65625rem, 0.6346153846rem + 0.0961538462vw, 0.75rem);
-        // font-size: calc(1rem + 0.041vw);
         line-height: 1;
 
         @include mq-desktop {
