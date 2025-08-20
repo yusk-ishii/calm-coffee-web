@@ -22,7 +22,7 @@ const { title } = Astro.props;
       top: 0;
       left: 0;
       z-index: -1;
-      width: calc(100vw - var(--pc-content-width));
+      width: calc(100% - var(--pc-content-width));
       height: 100%;
       padding: 10px;
       background-color: color-mix(in srgb, var(--color-text) 5%, transparent);
@@ -57,9 +57,5 @@ const { title } = Astro.props;
   .header-title {
     font-size: clamp-size(32);
     color: #fff;
-
-    @include mq-desktop {
-      font-size: 43px;
-    }
   }
 </style>

@@ -1,0 +1,68 @@
+---
+import Navigation from '@components/Navigation.astro';
+import ShopInfoDetails from '@components/ShopInfoDetails.astro';
+---
+
+<div class="global-menu">
+  <div class="global-menu-inner">
+    <Navigation />
+    <div class="shop-info-details">
+      <ShopInfoDetails iconColor="#fff" />
+    </div>
+  </div>
+</div>
+
+<style lang="scss" is:global>
+  .global-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    overscroll-behavior: none;
+    color: #fff;
+    scrollbar-width: none;
+    background-color: color-mix(in srgb, var(--color-main) 60%, transparent);
+    backdrop-filter: blur(40px);
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include mq-desktop {
+      width: var(--pc-content-width);
+    }
+
+    .open & {
+      display: block;
+    }
+  }
+</style>
+
+<style lang="scss">
+  .global-menu-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    min-height: 100%;
+    padding: clamp-size(64) clamp-size(20);
+    margin: 0 auto;
+  }
+
+  .shop-info-details {
+    display: flex;
+    place-self: center;
+    justify-content: center;
+    width: 100%;
+    max-width: clamp-size(400);
+    padding: clamp-size(16) clamp-size(12);
+    margin-top: clamp-size(24);
+    border: 1px solid #fff;
+    border-radius: clamp-size(8);
+  }
+</style>

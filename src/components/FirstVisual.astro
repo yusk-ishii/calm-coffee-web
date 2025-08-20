@@ -4,7 +4,7 @@ import Logo from '@components/Logo.astro';
 import LogoType from '@components/LogoType.astro';
 ---
 
-<section class="fv">
+<section id="top" class="fv">
   <div class="fv-image">
     <div></div>
   </div>
@@ -55,7 +55,7 @@ import LogoType from '@components/LogoType.astro';
     @include mq-desktop {
       position: fixed;
       z-index: -1;
-      width: calc(100vw - var(--pc-content-width));
+      width: calc(100% - var(--pc-content-width));
       height: 100%;
       padding: 10px;
       background-color: color-mix(in srgb, var(--color-text) 5%, transparent);
@@ -89,14 +89,13 @@ import LogoType from '@components/LogoType.astro';
     @include mq-desktop {
       display: block;
       width: 260px;
-      margin: 0 auto;
     }
   }
 
   .logo-type {
     position: absolute;
-    top: 24px;
-    left: 20px;
+    top: clamp-size(24);
+    left: clamp-size(24);
     width: clamp-size(138);
 
     > img {
@@ -116,16 +115,11 @@ import LogoType from '@components/LogoType.astro';
     height: 100%;
 
     @include mq-desktop {
-      height: auto;
       margin-top: 48px;
     }
 
     img {
       width: clamp-size(82);
-
-      @include mq-desktop {
-        width: 100px;
-      }
     }
   }
 </style>

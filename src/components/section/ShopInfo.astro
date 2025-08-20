@@ -4,7 +4,7 @@ import LinkButton from '@components/LinkButton.astro';
 import ShopInfoImg from '@assets/image_shop-info.jpg';
 ---
 
-<section id="store-info" class="store-info" aria-label="店舗情報">
+<section id="store-info" class="store-info">
   <div class="store-info-image">
     <img src={ShopInfoImg.src} alt="鎌倉の風景" />
   </div>
@@ -20,11 +20,6 @@ import ShopInfoImg from '@assets/image_shop-info.jpg';
   .store-info {
     padding-bottom: clamp-size(80);
     margin-top: clamp-size(48);
-
-    @include mq-desktop {
-      padding-bottom: 64px;
-      margin-top: 48px;
-    }
   }
 
   .store-info-image {
@@ -39,15 +34,9 @@ import ShopInfoImg from '@assets/image_shop-info.jpg';
     padding: 0 clamp-size(20);
     margin: clamp-size(48) auto 0;
 
-    @include mq('mobile', 'tablet') {
+    @include mq('mobile') {
       display: grid;
       place-items: center;
-    }
-
-    @include mq-desktop {
-      max-width: var(--pc-content-width);
-      padding: 0 40px;
-      margin: 48px auto 0;
     }
   }
 
@@ -55,9 +44,5 @@ import ShopInfoImg from '@assets/image_shop-info.jpg';
     width: 100%;
     margin-top: clamp-size(32);
     text-align: center;
-
-    @include mq-desktop {
-      margin-top: 40px;
-    }
   }
 </style>

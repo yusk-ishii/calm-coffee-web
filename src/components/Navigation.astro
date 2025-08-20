@@ -1,18 +1,20 @@
 ---
+const isTop = Astro.url.pathname === '/';
 import Instagram from '@assets/icon_instagram.svg';
 ---
 
 <div class="global-navigation">
-  <nav class="nav" aria-label="フッターナビゲーション">
+  <nav id="js-nav" class="nav">
     <ul class="nav-list">
-      <li><a href="#story">STORY</a></li>
-      <li><a href="#menu">MENU</a></li>
-      <li><a href="#item">ITEM</a></li>
-      <li><a href="#store-info">STORE INFO</a></li>
+      <li><a href={isTop ? '#top' : '/'}>TOP</a></li>
+      <li><a href={isTop ? '#story' : '/#story'}>STORY</a></li>
+      <li><a href={isTop ? '#menu' : '/#menu'}>MENU</a></li>
+      <li><a href={isTop ? '#item' : '/#item'}>ITEM</a></li>
+      <li><a href={isTop ? '#store-info' : '/#store-info'}>STORE INFO</a></li>
       <li><a href="/contact">CONTACT</a></li>
     </ul>
     <div class="sns">
-      <a class="sns-icon" href="https://instagram.com/" aria-label="Instagram" target="_blank">
+      <a class="sns-icon" href="https://instagram.com/" target="_blank">
         <img src={Instagram.src} alt="instagram" />
       </a>
     </div>
@@ -22,23 +24,6 @@ import Instagram from '@assets/icon_instagram.svg';
 <style lang="scss">
   .global-navigation {
     text-align: center;
-  }
-
-  .logo {
-    display: inline-block;
-    width: clamp-size(168);
-
-    @include mq-desktop {
-      width: 180px;
-    }
-  }
-
-  .nav {
-    padding: clamp-size(48) 0 clamp-size(32);
-
-    @include mq-desktop {
-      padding: 48px 0;
-    }
   }
 
   .nav-list {
@@ -51,17 +36,13 @@ import Instagram from '@assets/icon_instagram.svg';
         padding: clamp-size(12) clamp-size(16);
         font-size: clamp-size(16);
         line-height: 1;
-
-        @include mq-desktop {
-          padding: 12px 16px;
-        }
       }
 
       & + li {
         margin-top: clamp-size(16);
 
         @include mq-desktop {
-          margin-top: 16px;
+          margin-top: 10px;
         }
       }
     }
@@ -70,21 +51,12 @@ import Instagram from '@assets/icon_instagram.svg';
   .sns {
     margin-top: clamp-size(32);
 
-    @include mq-desktop {
-      margin-top: 48px;
-    }
-
     > .sns-icon {
       display: inline-block;
 
       img {
         width: clamp-size(40);
         height: clamp-size(40);
-
-        @include mq-desktop {
-          width: 48px;
-          height: 48px;
-        }
       }
     }
   }

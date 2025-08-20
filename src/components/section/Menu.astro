@@ -1,5 +1,6 @@
 ---
-import Section from '@components/Section.astro';
+import ProductsSection from './ProductsSection.astro';
+import ProductsTitle from './ProductsTitle.astro';
 import LinkButton from '@components/LinkButton.astro';
 import Menu01Img from '@assets/image_menu01.jpg';
 import Menu02Img from '@assets/image_menu02.jpg';
@@ -13,7 +14,8 @@ const paragraphs = [
 ];
 ---
 
-<Section id={id} title={title} subTitle={subTitle} paragraphs={paragraphs}>
+<ProductsSection id={id}>
+  <ProductsTitle title={title} subTitle={subTitle} paragraphs={paragraphs} />
   <ul class="menu-list">
     <li class="product">
       <img src={Menu01Img.src} alt="calmブレンド" class="product-image" />
@@ -33,56 +35,36 @@ const paragraphs = [
   <div class="menu-link">
     <LinkButton url="#" text="全メニューを見る" />
   </div>
-</Section>
 
-<style lang="scss">
-  .product {
-    .product-image {
-      aspect-ratio: 1 / 1;
-    }
+  <style lang="scss">
+    .product {
+      .product-image {
+        aspect-ratio: 1 / 1;
+      }
 
-    .product-info {
-      margin-top: clamp-size(12);
+      .product-info {
+        margin-top: clamp-size(12);
+      }
 
-      @include mq-desktop {
-        margin-top: 16px;
+      .product-name {
+        font-size: clamp-size(16);
+        line-height: 1;
+      }
+
+      .product-price {
+        margin-top: clamp-size(8);
+        line-height: 1;
+      }
+
+      & + & {
+        margin-top: clamp-size(40);
       }
     }
 
-    .product-name {
-      font-size: clamp-size(16);
-      line-height: 1;
-
-      @include mq-desktop {
-        font-size: 21px;
-      }
-    }
-
-    .product-price {
-      margin-top: clamp-size(8);
-      line-height: 1;
-
-      @include mq-desktop {
-        margin-top: 12px;
-      }
-    }
-
-    & + & {
+    .menu-link {
+      width: 100%;
       margin-top: clamp-size(40);
-
-      @include mq-desktop {
-        margin-top: 48px;
-      }
+      text-align: center;
     }
-  }
-
-  .menu-link {
-    width: 100%;
-    margin-top: clamp-size(40);
-    text-align: center;
-
-    @include mq-desktop {
-      margin-top: 48px;
-    }
-  }
-</style>
+  </style>
+</ProductsSection>

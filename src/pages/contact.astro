@@ -64,7 +64,7 @@ import PageHeader from '@components/PageHeader.astro';
     padding: clamp-size(32) clamp-size(20);
 
     @include mq-desktop {
-      padding: 120px 40px 40px;
+      padding-top: 128px;
     }
   }
 
@@ -74,9 +74,9 @@ import PageHeader from '@components/PageHeader.astro';
 
     > label {
       position: absolute;
-      top: 8px;
-      left: 10px;
-      font-size: 10px;
+      top: clamp-size(8);
+      left: clamp-size(10);
+      font-size: clamp-size(10);
       line-height: 1;
       color: var(--color-text);
       pointer-events: none;
@@ -90,7 +90,7 @@ import PageHeader from '@components/PageHeader.astro';
     > input,
     > textarea {
       width: 100%;
-      padding: 25px 10px 8px;
+      padding: clamp-size(25) clamp-size(10) clamp-size(8);
       outline: 1px solid var(--color-text);
 
       &::placeholder {

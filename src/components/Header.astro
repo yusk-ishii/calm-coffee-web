@@ -1,75 +1,27 @@
 ---
 import MenuButton from '@components/MenuButton.astro';
-import Navigation from '@components/Navigation.astro';
-import ShopInfoDetails from '@components/ShopInfoDetails.astro';
+import GlobalMenu from '@components/GlobalMenu.astro';
 ---
 
 <header class="header">
-  <div class="header-menu">
-    <MenuButton />
-  </div>
-  <div class="global-menu">
-    <div class="global-menu-inner">
-      <Navigation />
-      <div class="shop-info-details">
-        <ShopInfoDetails iconColor="#fff" />
-      </div>
-    </div>
-  </div>
+  <MenuButton />
+  <GlobalMenu />
 </header>
 
 <style lang="scss">
   .header {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     z-index: 1;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     width: 100%;
     padding: clamp-size(10) clamp-size(14);
-  }
-
-  .global-menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 100;
-    display: none;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    overscroll-behavior: none;
-    color: #fff;
-    background-color: color-mix(in srgb, var(--color-main) 60%, transparent);
-    backdrop-filter: blur(20px);
 
     @include mq-desktop {
-      width: 40%;
-    }
-  }
-
-  .global-menu-inner {
-    max-width: var(--sp-content-width);
-    padding: clamp-size(64) clamp-size(20);
-    margin: 0 auto;
-
-    @include mq-desktop {
-      max-width: var(--pc-content-width);
-      padding: 64px 40px;
-    }
-  }
-
-  .shop-info-details {
-    padding: clamp-size(16) clamp-size(12);
-    margin-top: clamp-size(32);
-    border: 1px solid #fff;
-    border-radius: clamp-size(8);
-
-    @include mq('mobile', 'tablet') {
-      display: grid;
-      place-items: center;
+      width: var(--pc-content-width);
     }
   }
 </style>

@@ -1,5 +1,6 @@
 ---
-import Section from '@components/Section.astro';
+import ProductsSection from './ProductsSection.astro';
+import ProductsTitle from './ProductsTitle.astro';
 import Item01Img from '@assets/image_item01.jpg';
 import Item02Img from '@assets/image_item02.jpg';
 import Item03Img from '@assets/image_item03.jpg';
@@ -13,7 +14,8 @@ const paragraphs = [
 ];
 ---
 
-<Section id={id} title={title} subTitle={subTitle} paragraphs={paragraphs}>
+<ProductsSection id={id}>
+  <ProductsTitle title={title} subTitle={subTitle} paragraphs={paragraphs} />
   <ul class="item-list">
     <li class="product">
       <img src={Item01Img.src} alt="" class="product-image" />
@@ -44,51 +46,33 @@ const paragraphs = [
       </div>
     </li>
   </ul>
-</Section>
 
-<style lang="scss">
-  .item-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: clamp-size(24) clamp-size(14);
-
-    @include mq-desktop {
+  <style lang="scss">
+    .item-list {
+      display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 32px 20px;
-    }
-  }
-
-  .product {
-    .product-image {
-      aspect-ratio: 1 / 1;
+      gap: clamp-size(24) clamp-size(14);
     }
 
-    .product-info {
-      margin-top: clamp-size(8);
+    .product {
+      .product-image {
+        aspect-ratio: 1 / 1;
+      }
 
-      @include mq-desktop {
-        margin-top: 8px;
+      .product-info {
+        margin-top: clamp-size(8);
+      }
+
+      .product-name {
+        font-size: clamp-size(12);
+        line-height: 1;
+      }
+
+      .product-price {
+        margin-top: clamp-size(4);
+        font-size: clamp-size(10);
+        line-height: 1;
       }
     }
-
-    .product-name {
-      font-size: clamp-size(12);
-      line-height: 1;
-
-      @include mq-desktop {
-        font-size: 16px;
-      }
-    }
-
-    .product-price {
-      margin-top: clamp-size(4);
-      font-size: clamp-size(10);
-      line-height: 1;
-
-      @include mq-desktop {
-        margin-top: 8px;
-        font-size: 14px;
-      }
-    }
-  }
-</style>
+  </style>
+</ProductsSection>

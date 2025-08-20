@@ -41,22 +41,12 @@ import StoryImg from '@assets/image_story.jpg';
   .story {
     padding-top: clamp-size(40);
     padding-bottom: clamp-size(64);
-
-    @include mq-desktop {
-      padding-top: 80px;
-      padding-bottom: 64px;
-    }
   }
 
   .story-wrapper {
     max-width: var(--sp-content-width);
     padding: clamp-size(40) clamp-size(20) clamp-size(64);
     margin: 0 auto;
-
-    @include mq-desktop {
-      max-width: var(--pc-content-width);
-      padding: 64px 40px;
-    }
   }
 
   .story-title {
@@ -65,20 +55,10 @@ import StoryImg from '@assets/image_story.jpg';
       width: clamp-size(250);
       height: auto;
     }
-
-    @include mq-desktop {
-      img {
-        width: 292px;
-      }
-    }
   }
 
   .story-body {
     margin-top: clamp-size(48);
-
-    @include mq-desktop {
-      margin-top: 64px;
-    }
   }
 
   .story-text {
@@ -93,30 +73,14 @@ import StoryImg from '@assets/image_story.jpg';
     span + span {
       margin-top: clamp-size(4);
     }
-
-    @include mq-desktop {
-      font-size: 18px;
-
-      & + & {
-        margin-top: 48px;
-      }
-
-      span + span {
-        margin-top: 4px;
-      }
-    }
   }
 
   .story-image {
-    margin-top: clamp-size(104);
+    margin-top: clamp-size(80);
 
     img {
       aspect-ratio: 1.414 / 1;
       object-fit: cover;
-    }
-
-    @include mq-desktop {
-      margin-top: 104px;
     }
   }
 </style>

@@ -1,0 +1,42 @@
+---
+interface Props {
+  title: string;
+  subTitle: string;
+  paragraphs: string[];
+}
+
+const { title, subTitle, paragraphs } = Astro.props;
+---
+
+<header>
+  <h2 class="title">{title}</h2>
+  <p class="subtitle" set:html={subTitle} />
+</header>
+<div class="description">
+  {paragraphs.map((p) => <p set:html={p} />)}
+</div>
+
+<style lang="scss">
+  .title {
+    font-size: clamp-size(18);
+    font-weight: 300;
+    color: var(--color-sub-text);
+  }
+
+  .subtitle {
+    margin-top: clamp-size(12);
+    font-size: clamp-size(43);
+    font-weight: 300;
+    line-height: 1.4;
+    color: var(--color-text);
+  }
+
+  .description {
+    margin-top: clamp-size(40);
+    margin-bottom: clamp-size(48);
+
+    p + p {
+      margin-top: clamp-size(16);
+    }
+  }
+</style>

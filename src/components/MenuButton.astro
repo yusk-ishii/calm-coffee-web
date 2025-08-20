@@ -1,56 +1,45 @@
-<button class="menu-button">
-  <div class="menu-button-line">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+<button id="js-menu-button" class="menu-button">
+  <span class="line"></span>
+  <span class="line"></span>
 </button>
 
-<style lang="scss">
+<style lang="scss" is:global>
   .menu-button {
-    display: grid;
-    place-items: center;
+    position: relative;
+    z-index: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: clamp-size(48);
     height: clamp-size(48);
+  }
 
-    .menu-button-line {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      width: clamp-size(35);
-      height: clamp-size(23);
+  .line {
+    position: absolute;
+    width: clamp-size(35);
+    height: 2px;
+    background-color: var(--color-text);
+    border-radius: 999px;
+    transform-origin: center;
 
-      > span {
-        display: block;
-        width: 100%;
-        height: clamp-size(2);
-        background-color: #fff;
-        border-radius: 999px;
-        opacity: 1;
+    &:nth-of-type(1) {
+      transform: translateY(calc(clamp-size(6) * -1));
+    }
 
-        @include mq-desktop {
-          background-color: var(--color-text);
-        }
+    &:nth-of-type(2) {
+      transform: translateY(clamp-size(6));
+    }
 
-        &:nth-of-type(1),
-        &:nth-of-type(2),
-        &:nth-of-type(3) {
-          position: absolute;
-        }
+    .open & {
+      background-color: #fff;
 
-        &:nth-of-type(1) {
-          top: 0;
-        }
+      &:nth-of-type(1) {
+        transform: rotate(45deg);
+      }
 
-        &:nth-of-type(2) {
-          top: 10.5px;
-        }
-
-        &:nth-of-type(3) {
-          top: 21px;
-          right: 0;
-          width: 50%;
-        }
+      &:nth-of-type(2) {
+        transform: rotate(-45deg);
       }
     }
   }
