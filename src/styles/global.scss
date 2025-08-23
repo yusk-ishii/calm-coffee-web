@@ -6,6 +6,11 @@
   --color-sub-text: #B7BEC3;
 }
 
+html,
+body {
+  overscroll-behavior-y: none; // ストレッチオーバースクロールを防止
+}
+
 body {
   font-size: clamp-size(14);
   font-weight: 400;
