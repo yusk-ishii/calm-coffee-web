@@ -11,24 +11,31 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: clamp-size(48);
-    height: clamp-size(48);
+    width: clamp-size(46);
+    height: clamp-size(46);
+    pointer-events: auto;
+    background-color: var(--color-main);
+    border-radius: 999px;
+
+    .open & {
+      background-color: transparent;
+    }
   }
 
   .line {
     position: absolute;
-    width: clamp-size(35);
-    height: 2px;
-    background-color: var(--color-text);
+    width: clamp-size(20);
+    height: 1px;
+    background-color: #fff;
     border-radius: 999px;
     transform-origin: center;
 
     &:nth-of-type(1) {
-      transform: translateY(calc(clamp-size(6) * -1));
+      transform: translateY(calc(clamp-size(3) * -1));
     }
 
     &:nth-of-type(2) {
-      transform: translateY(clamp-size(6));
+      transform: translateY(clamp-size(3));
     }
 
     .open & {

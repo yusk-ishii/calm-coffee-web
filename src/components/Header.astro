@@ -11,14 +11,15 @@ import GlobalMenu from '@components/GlobalMenu.astro';
 <style lang="scss">
   .header {
     position: fixed;
-    top: 0;
     right: 0;
+    bottom: 0;
     z-index: 1;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     width: 100%;
-    padding: clamp-size(10) clamp-size(14);
+    padding: clamp-size(10) clamp-size(8);
+    pointer-events: none;
 
     @include mq-desktop {
       width: var(--pc-content-width);
