@@ -25,6 +25,7 @@
   "dependencies": {
     "@fontsource-variable/montserrat": "^5.2.6",
     "@fontsource/zen-kaku-gothic-new": "^5.2.6",
+    "@swup/astro": "^1.7.0",
     "astro": "^5.12.3",
     "astro-compress": "^2.3.8",
     "destyle.css": "^4.0.1",
