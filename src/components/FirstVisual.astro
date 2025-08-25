@@ -29,6 +29,7 @@ import LogoType from '@components/LogoType.astro';
     position: relative;
     height: var(--vh);
     min-height: 640px;
+    overflow: hidden;
     overscroll-behavior: none;
 
     @include mq-desktop {
@@ -70,6 +71,7 @@ import LogoType from '@components/LogoType.astro';
       background-image: url('../assets/fv_01.jpg');
       background-position: center;
       background-size: cover;
+      animation: blur-in 2s both var(--ease-out-sine);
 
       @include mq-desktop {
         border-radius: 8px;
@@ -79,6 +81,7 @@ import LogoType from '@components/LogoType.astro';
 
   .fv-content {
     height: 50%;
+    animation: blur-in 2s both var(--ease-out-sine);
 
     @include mq-desktop {
       height: auto;

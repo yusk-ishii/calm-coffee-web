@@ -13,7 +13,17 @@ body {
 }
 
 html {
+  scrollbar-color: #60929f transparent;
   scrollbar-width: thin;
+}
+
+html.is-changing .transition-fade {
+  opacity: 1;
+  transition: opacity 0.4s var(--ease-out-sine);
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
 }
 
 body {
@@ -31,4 +41,28 @@ img {
   display: block;
   width: 100%;
   height: auto;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blur-in {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: scale(1.02);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
 }

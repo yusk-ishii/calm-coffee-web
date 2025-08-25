@@ -11,11 +11,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: clamp-size(46);
+    width: clamp-size(48);
     height: clamp-size(46);
     pointer-events: auto;
     background-color: var(--color-main);
-    border-radius: 999px;
+    border-radius: 20px 0 0;
 
     .open & {
       background-color: transparent;
@@ -23,10 +23,10 @@
   }
 
   .line {
-    --line-position: 3;
+    --line-position: 4;
 
     position: absolute;
-    width: clamp-size(20);
+    width: clamp-size(22);
     height: 2px;
     background-color: #fff;
     border-radius: 999px;

@@ -21,5 +21,12 @@ export default defineConfig({
     },
   },
 
-  integrations: [swup(), compress()],
+  integrations: [
+    swup({
+      containers: ['.transition'],
+      smoothScrolling: false,
+      globalInstance: true,
+    }),
+    compress(),
+  ],
 });
