@@ -1,6 +1,6 @@
 ---
-import Instagram from '@assets/icon_instagram.svg';
 import Logo from '@components/Logo.astro';
+import IconInstagram from '@components/icons/IconInstagram.astro';
 const base = import.meta.env.BASE_URL;
 ---
 
@@ -10,7 +10,7 @@ const base = import.meta.env.BASE_URL;
   </div>
   <div class="sns">
     <a class="sns-icon" href="https://instagram.com/" target="_blank">
-      <img src={Instagram.src} alt="instagram" />
+      <IconInstagram />
     </a>
   </div>
   <small class="copyright">©2025 calm coffee</small>
@@ -34,11 +34,8 @@ const base = import.meta.env.BASE_URL;
 
     > .sns-icon {
       display: inline-block;
-
-      img {
-        width: clamp-size(40);
-        height: clamp-size(40);
-      }
+      width: clamp-size(40);
+      height: clamp-size(40);
     }
   }
 

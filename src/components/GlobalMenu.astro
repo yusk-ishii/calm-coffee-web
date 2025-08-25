@@ -53,6 +53,10 @@ import ShopInfoDetails from '@components/ShopInfoDetails.astro';
     min-height: 100%;
     padding: clamp-size(64) clamp-size(20) clamp-size(80);
     margin: 0 auto;
+
+    @include mq-desktop {
+      justify-content: center;
+    }
   }
 
   .shop-info-details {

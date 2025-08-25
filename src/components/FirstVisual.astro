@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import catchPhrase from '@assets/fv_catch-phrase.svg';
 import Logo from '@components/Logo.astro';
 import LogoType from '@components/LogoType.astro';
@@ -18,7 +19,7 @@ import LogoType from '@components/LogoType.astro';
       </span>
     </div>
     <h1 class="catchphrase">
-      <img src={catchPhrase.src} alt="波と珈琲と静けさと。" />
+      <Image src={catchPhrase} alt="波と珈琲と静けさと。" loading="eager" />
     </h1>
   </div>
 </section>
@@ -64,7 +65,7 @@ import LogoType from '@components/LogoType.astro';
     > div {
       width: 100%;
       height: 100%;
-      background-image: url('../assets/fv_01_sp.jpg');
+      background-image: url('../assets/fv_01.jpg');
       background-position: center;
       background-size: cover;
 

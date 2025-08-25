@@ -1,9 +1,9 @@
 :root {
   --pc-content-width: 540px;
   --sp-content-width: 640px;
-  --color-main: #96B7C0;
-  --color-text: #282D30;
-  --color-sub-text: #B7BEC3;
+  --color-main: #96b7c0;
+  --color-text: #282d30;
+  --color-sub-text: #b7bec3;
 }
 
 html,
@@ -25,4 +25,5 @@ body {
 img {
   display: block;
   width: 100%;
+  height: auto;
 }

@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import ProductsSection from './ProductsSection.astro';
 import ProductsTitle from './ProductsTitle.astro';
 import Item01Img from '@assets/image_item01.jpg';
@@ -18,28 +19,28 @@ const paragraphs = [
   <ProductsTitle title={title} subTitle={subTitle} paragraphs={paragraphs} />
   <ul class="item-list">
     <li class="product">
-      <img src={Item01Img.src} alt="" class="product-image" />
+      <Image src={Item01Img} alt="calmブレンド" class="product-image" />
       <div class="product-info">
         <h3 class="product-name">calmブレンド</h3>
         <p class="product-price">100gから販売しております。</p>
       </div>
     </li>
     <li class="product">
-      <img src={Item02Img.src} alt="" class="product-image" />
+      <Image src={Item02Img} alt="エチオピアブレンド" class="product-image" />
       <div class="product-info">
         <h3 class="product-name">エチオピアブレンド</h3>
         <p class="product-price">100gから販売しております。</p>
       </div>
     </li>
     <li class="product">
-      <img src={Item03Img.src} alt="" class="product-image" />
+      <Image src={Item03Img} alt="calmブレンド ドリップバック" class="product-image" />
       <div class="product-info">
         <h3 class="product-name">calmブレンド 1袋</h3>
         <p class="product-price">¥200（税込）</p>
       </div>
     </li>
     <li class="product">
-      <img src={Item04Img.src} alt="" class="product-image" />
+      <Image src={Item04Img} alt="エチオピアブレンド ドリップバック" class="product-image" />
       <div class="product-info">
         <h3 class="product-name">エチオピアブレンド 1袋</h3>
         <p class="product-price">¥200（税込）</p>

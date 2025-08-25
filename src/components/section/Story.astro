@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import StoryTitle from '@assets/story_title.svg';
 import StoryImg from '@assets/image_story.jpg';
 ---
@@ -6,7 +7,7 @@ import StoryImg from '@assets/image_story.jpg';
 <section id="story" class="story">
   <div class="story-wrapper">
     <h2 class="story-title">
-      <img src={StoryTitle.src} alt="心がほどける鎌倉の一杯。" />
+      <Image src={StoryTitle} alt="心がほどける鎌倉の一杯。" />
     </h2>
     <div class="story-body">
       <p class="story-text">
@@ -33,7 +34,7 @@ import StoryImg from '@assets/image_story.jpg';
     </div>
   </div>
   <div class="story-image">
-    <img src={StoryImg.src} alt="story image" />
+    <Image src={StoryImg} alt="水平線の風景" />
   </div>
 </section>
 

@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import ShopInfoDetails from '@components/ShopInfoDetails.astro';
 import LinkButton from '@components/LinkButton.astro';
 import ShopInfoImg from '@assets/image_shop-info.jpg';
@@ -6,7 +7,7 @@ import ShopInfoImg from '@assets/image_shop-info.jpg';
 
 <section id="store-info" class="store-info">
   <div class="store-info-image">
-    <img src={ShopInfoImg.src} alt="鎌倉の風景" />
+    <Image src={ShopInfoImg} alt="鎌倉の風景" />
   </div>
   <div class="shop-info-details">
     <ShopInfoDetails />

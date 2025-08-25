@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import ProductsSection from './ProductsSection.astro';
 import ProductsTitle from './ProductsTitle.astro';
 import LinkButton from '@components/LinkButton.astro';
@@ -18,14 +19,14 @@ const paragraphs = [
   <ProductsTitle title={title} subTitle={subTitle} paragraphs={paragraphs} />
   <ul class="menu-list">
     <li class="product">
-      <img src={Menu01Img.src} alt="calmブレンド" class="product-image" />
+      <Image src={Menu01Img} alt="calmブレンド" class="product-image" />
       <div class="product-info">
         <h3 class="product-name">calmブレンド</h3>
         <p class="product-price">Regular ¥430 / Large ¥480</p>
       </div>
     </li>
     <li class="product">
-      <img src={Menu02Img.src} alt="カフェラテ" class="product-image" />
+      <Image src={Menu02Img} alt="カフェラテ" class="product-image" />
       <div class="product-info">
         <h3 class="product-name">カフェラテ</h3>
         <p class="product-price">Regular ¥490 / Large ¥570</p>
