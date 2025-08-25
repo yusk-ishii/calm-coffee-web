@@ -4,11 +4,11 @@ const nav = document.getElementById('js-nav');
 const navLinks = nav?.querySelectorAll('.nav-list a');
 
 menuButton?.addEventListener('click', () => {
-  html.classList.toggle("open")
-})
+  html.classList.toggle('open');
+});
 
-navLinks?.forEach(link => {
-  link.addEventListener("click", () => {
+navLinks?.forEach((link) => {
+  link.addEventListener('click', () => {
     html.classList.remove('open');
-  })
-})
+  });
+});

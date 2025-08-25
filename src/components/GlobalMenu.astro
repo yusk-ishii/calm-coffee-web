@@ -3,7 +3,7 @@ import Navigation from '@components/Navigation.astro';
 import ShopInfoDetails from '@components/ShopInfoDetails.astro';
 ---
 
-<div class="global-menu">
+<div id="global-menu" class="global-menu">
   <div class="global-menu-inner">
     <Navigation />
     <div class="shop-info-details">
@@ -51,7 +51,7 @@ import ShopInfoDetails from '@components/ShopInfoDetails.astro';
     justify-content: flex-end;
     width: 100%;
     min-height: 100%;
-    padding: clamp-size(64) clamp-size(20);
+    padding: clamp-size(64) clamp-size(20) clamp-size(80);
     margin: 0 auto;
   }
 
