@@ -23,6 +23,8 @@
   }
 
   .line {
+    --line-position: 3;
+
     position: absolute;
     width: clamp-size(20);
     height: 2px;
@@ -31,23 +33,87 @@
     transform-origin: center;
 
     &:nth-of-type(1) {
-      transform: translateY(calc(clamp-size(3) * -1));
+      transform: translateY(calc(clamp-size(var(--line-position)) * -1));
     }
 
     &:nth-of-type(2) {
-      transform: translateY(clamp-size(3));
+      transform: translateY(clamp-size(var(--line-position)));
     }
 
     .open & {
-      background-color: #fff;
-
       &:nth-of-type(1) {
-        transform: rotate(45deg);
+        animation: open-top-line 0.3s var(--ease-out-sine) forwards;
       }
 
       &:nth-of-type(2) {
-        transform: rotate(-45deg);
+        animation: open-bottom-line 0.3s var(--ease-out-sine) forwards;
       }
+    }
+
+    .close & {
+      &:nth-of-type(1) {
+        animation: close-top-line 0.3s var(--ease-out-sine) forwards;
+      }
+
+      &:nth-of-type(2) {
+        animation: close-bottom-line 0.3s var(--ease-out-sine) forwards;
+      }
+    }
+  }
+
+  @keyframes open-top-line {
+    0% {
+      transform: translateY(calc(clamp-size(var(--line-position)) * -1)) rotate(0);
+    }
+
+    50% {
+      transform: translateY(0) rotate(0);
+    }
+
+    100% {
+      transform: translateY(0) rotate(30deg);
+    }
+  }
+
+  @keyframes open-bottom-line {
+    0% {
+      transform: translateY(clamp-size(var(--line-position))) rotate(0);
+    }
+
+    50% {
+      transform: translateY(0) rotate(0);
+    }
+
+    100% {
+      transform: translateY(0) rotate(-30deg);
+    }
+  }
+
+  @keyframes close-top-line {
+    0% {
+      transform: translateY(0) rotate(30deg);
+    }
+
+    50% {
+      transform: translateY(0) rotate(0);
+    }
+
+    100% {
+      transform: translateY(calc(clamp-size(var(--line-position)) * -1)) rotate(0);
+    }
+  }
+
+  @keyframes close-bottom-line {
+    0% {
+      transform: translateY(0) rotate(-30deg);
+    }
+
+    50% {
+      transform: translateY(0) rotate(0);
+    }
+
+    100% {
+      transform: translateY(clamp-size(var(--line-position))) rotate(0);
     }
   }
 </style>

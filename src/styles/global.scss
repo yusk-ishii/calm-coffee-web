@@ -4,11 +4,16 @@
   --color-main: #96b7c0;
   --color-text: #282d30;
   --color-sub-text: #b7bec3;
+  --ease-out-sine: cubic-bezier(0.61, 1, 0.88, 1);
 }
 
 html,
 body {
   overscroll-behavior-y: none; // ストレッチオーバースクロールを防止
+}
+
+html {
+  scrollbar-width: thin;
 }
 
 body {

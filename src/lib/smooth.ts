@@ -3,9 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
-const lenis = initLenis({
-  prevent: (node) => node.id === 'global-menu',
-});
+const lenis = initLenis();
 
 lenis.on('scroll', ScrollTrigger.update);
 

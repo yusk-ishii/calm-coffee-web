@@ -22,10 +22,11 @@ const siteDesc = '鎌倉・七里ヶ浜のカフェ';
 const pageTitle = title ? `${title} | ${siteName}` : `${siteName} | ${siteDesc}`;
 const description =
   '鎌倉・七里ヶ浜の海沿いカフェ。忙しい日常の合間に、静かで穏やかな時間を届ける一杯のコーヒー体験を提供します。';
+const pathname = Astro.url.pathname.replace(`${base}/`, '');
 ---
 
 <!doctype html>
-<html lang="ja">
+<html lang="ja" data-pathname={pathname === '' ? 'top' : pathname}>
   <head>
     <meta name="robots" content="noindex" />
 
@@ -59,10 +60,6 @@ const description =
 </html>
 
 <style lang="scss">
-  html {
-    scroll-behavior: smooth;
-  }
-
   body {
     font-family: YakuHanMP, 'Montserrat Variable', 'Zen Kaku Gothic New', sans-serif;
   }
