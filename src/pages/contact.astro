@@ -12,7 +12,7 @@ const base = import.meta.env.BASE_URL;
         営業時間やメニューのご質問、取材のご相談など、<br />
         お気軽にお問い合わせください。
       </p>
-      <form action={`${base}/contact`} method="post">
+      <form class="form" action={`${base}/contact`} method="post">
         <div class="field">
           <label for="name">お名前</label>
           <input
@@ -65,13 +65,19 @@ const base = import.meta.env.BASE_URL;
     padding: clamp-size(32) clamp-size(20);
 
     @include mq-desktop {
-      padding-top: 128px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 100dvh;
     }
+  }
+
+  .form {
+    margin-top: clamp-size(32);
   }
 
   .field {
     position: relative;
-    margin-top: clamp-size(32);
 
     > label {
       position: absolute;

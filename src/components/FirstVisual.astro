@@ -27,12 +27,14 @@ import LogoType from '@components/LogoType.astro';
 <style lang="scss">
   .fv {
     position: relative;
-    height: 100dvh;
+    height: var(--vh);
+    min-height: 640px;
     overscroll-behavior: none;
 
     @include mq-desktop {
       display: grid;
       place-items: center;
+      height: 100dvh;
     }
 
     &::before {

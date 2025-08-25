@@ -6,5 +6,5 @@
 //   width: clamp-size(18)
 // ---------------------------------------------------------------
 @function clamp-size($base, $width: 390) {
-  @return clamp(math.div($base, 1.2) * 1px, math.div($base, $width) * 100vw, ($base * 1.2) * 1px);
+  @return clamp(($base / 1.2) * 1px, ($base / $width) * 100vw, ($base * 1.2) * 1px);
 }
