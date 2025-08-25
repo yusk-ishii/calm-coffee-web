@@ -2,7 +2,10 @@
 import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
-export default defineConfig({  vite: {
+export default defineConfig({
+  site: "https://tokyo-designplex.jp",
+  base: "/~2504ishii/project",
+  vite: {
     css: {
       preprocessorOptions: {
         scss: {

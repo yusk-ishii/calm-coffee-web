@@ -1,6 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import PageHeader from '@components/PageHeader.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="CONTACT">
@@ -11,7 +12,7 @@ import PageHeader from '@components/PageHeader.astro';
         営業時間やメニューのご質問、取材のご相談など、<br />
         お気軽にお問い合わせください。
       </p>
-      <form action="/contact" method="post">
+      <form action={`${base}/contact`} method="post">
         <div class="field">
           <label for="name">お名前</label>
           <input

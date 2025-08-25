@@ -1,17 +1,17 @@
 ---
-const isTop = Astro.url.pathname === '/';
 import Instagram from '@assets/icon_instagram.svg';
+const base = import.meta.env.BASE_URL;
 ---
 
 <div class="global-navigation">
   <nav id="js-nav" class="nav">
     <ul class="nav-list">
-      <li><a href={isTop ? '#top' : '/'}>TOP</a></li>
-      <li><a href={isTop ? '#story' : '/#story'}>STORY</a></li>
-      <li><a href={isTop ? '#menu' : '/#menu'}>MENU</a></li>
-      <li><a href={isTop ? '#item' : '/#item'}>ITEM</a></li>
-      <li><a href={isTop ? '#store-info' : '/#store-info'}>STORE INFO</a></li>
-      <li><a href="/contact">CONTACT</a></li>
+      <li><a href={`${base}/#top`}>TOP</a></li>
+      <li><a href={`${base}/#story`}>STORY</a></li>
+      <li><a href={`${base}/#menu`}>MENU</a></li>
+      <li><a href={`${base}/#item`}>ITEM</a></li>
+      <li><a href={`${base}/#store-info`}>STORE INFO</a></li>
+      <li><a href={`${base}/contact`}>CONTACT</a></li>
     </ul>
     <div class="sns">
       <a class="sns-icon" href="https://instagram.com/" target="_blank">
