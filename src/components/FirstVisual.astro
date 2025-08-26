@@ -7,17 +7,16 @@ import LogoType from '@components/LogoType.astro';
 
 <section id="top" class="fv">
   <div class="fv-image">
-    <div></div>
-  </div>
-  <div class="fv-content">
-    <div class="fv-logo">
-      <span class="logo">
-        <Logo />
-      </span>
+    <div>
       <span class="logo-type">
         <LogoType color="#fff" />
       </span>
     </div>
+  </div>
+  <div class="fv-content">
+    <span class="logo">
+      <Logo />
+    </span>
     <h1 class="catchphrase">
       <Image src={catchPhrase} alt="波と珈琲と静けさと。" loading="eager" />
     </h1>
@@ -102,6 +101,7 @@ import LogoType from '@components/LogoType.astro';
     position: absolute;
     top: clamp-size(24);
     left: clamp-size(24);
+    z-index: 1;
     width: clamp-size(138);
 
     > img {
