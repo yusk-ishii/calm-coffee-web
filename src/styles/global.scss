@@ -7,11 +7,6 @@
   --ease-out-sine: cubic-bezier(0.61, 1, 0.88, 1);
 }
 
-html,
-body {
-  overscroll-behavior-y: none; // ストレッチオーバースクロールを防止
-}
-
 html {
   scrollbar-color: #60929f transparent;
   scrollbar-width: thin;

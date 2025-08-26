@@ -1,47 +1,91 @@
+import { gsap } from 'gsap';
 import { getLenis } from './singletons';
 
 const lenis = getLenis();
 const html = document.documentElement;
+function easeOutSine(x: number): number {
+  return Math.sin((x * Math.PI) / 2);
+}
 
 function menuOpen() {
   html.classList.add('open');
-  html.dataset.scrollLock = 'true';
+  html.dataset.menuStatus = 'open';
 }
 
 function menuClose() {
-  if (!html.classList.contains('open')) return;
-  html.classList.remove('open');
   html.classList.add('close');
-  html.dataset.scrollLock = 'false';
+  html.classList.remove('open');
+}
+
+function menuCloseComplete() {
+  html.dataset.menuStatus = 'close';
+  html.classList.remove('close');
 }
 
 /** ハンバーガーボタンクリックでメニューを開閉 */
-function registerMenuButton() {
-  const menuButton = document.getElementById('js-menu-button');
-  menuButton?.addEventListener('click', () => {
+function registerMenuEvent() {
+  const menuButton = document.getElementById('menu-button') as HTMLElement;
+  const gnav = document.getElementById('global-menu') as HTMLElement;
+  const gnavInner = gnav.querySelector('.global-menu-inner') as HTMLElement;
+  const nav = gnav.querySelector('.nav') as HTMLElement;
+  const links = nav.querySelectorAll<HTMLAnchorElement>('.nav-list a');
+  const sns = gnav.querySelector('.sns');
+  const shopInfo = gnav.querySelector('.shop-info-details');
+  const defaults = { duration: 0.5, ease: easeOutSine };
+
+  const menuOpenTl = gsap.timeline({
+    paused: true,
+    defaults,
+  });
+  menuOpenTl
+    .fromTo(
+      gnav,
+      {
+        autoAlpha: 0,
+      },
+      {
+        autoAlpha: 1,
+        onStart: menuOpen,
+      },
+    )
+    .from(
+      [...links, sns, shopInfo],
+      {
+        opacity: 0,
+        y: 5,
+        stagger: 0.08,
+      },
+      '0.1',
+    );
+
+  const menuCloseTl = gsap.timeline({ paused: true, defaults });
+  menuCloseTl
+    .to(gnav, {
+      autoAlpha: 0,
+      onStart: menuClose,
+      onComplete: menuCloseComplete,
+    })
+    .to(gnavInner, { opacity: 0, y: -10 }, '<');
+
+  menuButton.addEventListener('click', () => {
     if (!html.classList.contains('open')) {
-      menuOpen();
+      menuCloseTl.pause(0);
+      menuOpenTl.play(0);
     } else {
-      menuClose();
+      menuCloseTl.play(0);
     }
   });
 
-  menuButton?.firstElementChild?.addEventListener('animationend', () => {
-    if (html.classList.contains('close')) {
-      html.classList.remove('close');
-    }
-  });
-}
-
-/** メニュー内リンククリックでメニューを閉じる */
-function registerLinks() {
-  const nav = document.getElementById('js-nav');
-  const links = nav?.querySelectorAll<HTMLAnchorElement>('.nav-list a');
+  // menuButton?.firstElementChild?.addEventListener('animationend', () => {
+  //   if (html.classList.contains('close')) {
+  //     html.classList.remove('close');
+  //   }
+  // });
 
   links?.forEach((link) => {
     link.addEventListener('click', () => {
       if (link.hash) {
-        menuClose();
+        menuCloseTl.progress(1);
         lenis?.scrollTo(link.hash, {
           duration: 1,
           easing: (x: number) => {
@@ -55,8 +99,7 @@ function registerLinks() {
 
 /** 初期化 */
 function initMenu() {
-  registerMenuButton();
-  registerLinks();
+  registerMenuEvent();
 }
 
 const setupSwup = () => {

@@ -1,4 +1,4 @@
 import './setCssVars';
-import './animation';
+import './story';
 import './smooth';
 import './menu';

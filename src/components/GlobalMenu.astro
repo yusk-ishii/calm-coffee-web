@@ -37,7 +37,7 @@ import ShopInfoDetails from '@components/ShopInfoDetails.astro';
       width: var(--pc-content-width);
     }
 
-    .open & {
+    [data-menu-status='open'] & {
       display: block;
     }
   }
@@ -53,7 +53,7 @@ import ShopInfoDetails from '@components/ShopInfoDetails.astro';
     padding: clamp-size(32) clamp-size(20) clamp-size(40);
     margin: 0 auto;
 
-    @include mq-desktop {
+    @include mq('mobile') {
       justify-content: center;
     }
   }
