@@ -5,6 +5,8 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <footer class="footer">
+  <div class="wave-front"></div>
+  <div class="wave-back"></div>
   <div class="logo">
     <a href={`${base}/`}><Logo color="#fff" /></a>
   </div>
@@ -18,7 +20,8 @@ const base = import.meta.env.BASE_URL;
 
 <style lang="scss">
   .footer {
-    padding: clamp-size(64) clamp-size(20) clamp-size(40);
+    position: relative;
+    padding: clamp-size(40) 0 clamp-size(24);
     color: #fff;
     text-align: center;
     background-color: var(--color-main);
@@ -39,9 +42,64 @@ const base = import.meta.env.BASE_URL;
     }
   }
 
+  .contact {
+    display: block;
+    margin-top: clamp-size(32);
+  }
+
   .copyright {
     display: block;
-    margin-top: clamp-size(64);
+    margin-top: clamp-size(32);
     text-align: center;
+  }
+
+  .wave-front,
+  .wave-back {
+    position: absolute;
+    bottom: calc(100% - 1px);
+    left: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 6px;
+    overflow: hidden;
+
+    &::before,
+    &::after {
+      display: block;
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      content: '';
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-size: contain;
+    }
+  }
+
+  .wave-front {
+    &::before,
+    &::after {
+      background-image: url('../assets/bg_wave_front.svg');
+      animation: endless-wave 16s linear infinite forwards;
+    }
+  }
+
+  .wave-back {
+    &::before,
+    &::after {
+      background-image: url('../assets/bg_wave_back.svg');
+      animation: endless-wave 32s linear infinite forwards reverse;
+    }
+  }
+
+  @keyframes endless-wave {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
   }
 </style>

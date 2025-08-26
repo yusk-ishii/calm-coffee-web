@@ -9,17 +9,18 @@ import ShopInfoImg from '@assets/image_shop-info.jpg';
   <div class="store-info-image">
     <Image src={ShopInfoImg} alt="鎌倉の風景" />
   </div>
-  <div class="shop-info-details">
-    <ShopInfoDetails />
-  </div>
-  <div class="google-map">
-    <LinkButton url="https://maps.app.goo.gl/fVz5B7Dtum7vN1vz8" text="Google MAPで見る" />
+  <div class="content">
+    <div class="shop-info-details">
+      <ShopInfoDetails />
+    </div>
+    <div class="google-map">
+      <LinkButton url="https://maps.app.goo.gl/fVz5B7Dtum7vN1vz8" text="Google MAPで見る" />
+    </div>
   </div>
 </section>
 
 <style lang="scss">
   .store-info {
-    padding-bottom: clamp-size(80);
     margin-top: clamp-size(48);
   }
 
@@ -30,11 +31,13 @@ import ShopInfoImg from '@assets/image_shop-info.jpg';
     }
   }
 
-  .shop-info-details {
+  .content {
     max-width: var(--sp-content-width);
-    padding: 0 clamp-size(20);
-    margin: clamp-size(48) auto 0;
+    padding: clamp-size(48) clamp-size(20) clamp-size(32);
+    margin: 0 auto;
+  }
 
+  .shop-info-details {
     @include mq('mobile') {
       display: grid;
       place-items: center;
