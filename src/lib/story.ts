@@ -1,5 +1,6 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { easeOutSine } from './utils/easing';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,19 +12,21 @@ const paragraphs = storyBody.querySelectorAll('.story-text span');
 const animationText = [storyTitle, ...paragraphs];
 
 const textTl = gsap.timeline({
+  defaults: { ease: easeOutSine },
   scrollTrigger: {
     trigger: story,
-    start: '0% 75%',
+    start: '15% 75%',
     end: '10% 20%',
     // markers: true,
-    scrub: 3,
+    scrub: 5,
     once: true,
   },
 });
 
 textTl.from(animationText, {
   opacity: 0,
-  y: 10,
-  filter: 'blur(10px)',
-  stagger: 0.3,
+  xPercent: -1,
+  yPercent: -20,
+  filter: 'blur(15px)',
+  stagger: 0.15,
 });

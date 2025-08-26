@@ -1,11 +1,9 @@
 import { gsap } from 'gsap';
-import { getLenis } from './singletons';
+import { getLenis } from './utils/lenis';
+import { easeOutSine } from './utils/easing';
 
 const lenis = getLenis();
 const html = document.documentElement;
-function easeOutSine(x: number): number {
-  return Math.sin((x * Math.PI) / 2);
-}
 
 function menuOpen() {
   html.classList.add('open');
@@ -55,7 +53,7 @@ function registerMenuEvent() {
         y: 5,
         stagger: 0.08,
       },
-      '0.1',
+      '<',
     );
 
   const menuCloseTl = gsap.timeline({ paused: true, defaults });
@@ -76,22 +74,11 @@ function registerMenuEvent() {
     }
   });
 
-  // menuButton?.firstElementChild?.addEventListener('animationend', () => {
-  //   if (html.classList.contains('close')) {
-  //     html.classList.remove('close');
-  //   }
-  // });
-
   links?.forEach((link) => {
     link.addEventListener('click', () => {
       if (link.hash) {
         menuCloseTl.progress(1);
-        lenis?.scrollTo(link.hash, {
-          duration: 1,
-          easing: (x: number) => {
-            return Math.sin((x * Math.PI) / 2);
-          },
-        });
+        lenis?.scrollTo(link.hash);
       }
     });
   });
