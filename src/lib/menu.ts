@@ -1,8 +1,6 @@
 import { gsap } from 'gsap';
 import { getLenis } from './utils/lenis';
-import { easeOutSine } from './utils/easing';
 
-const lenis = getLenis();
 const html = document.documentElement;
 
 function menuOpen() {
@@ -29,7 +27,7 @@ function registerMenuEvent() {
   const links = nav.querySelectorAll<HTMLAnchorElement>('.nav-list a');
   const sns = gnav.querySelector('.sns');
   const shopInfo = gnav.querySelector('.shop-info-details');
-  const defaults = { duration: 0.5, ease: easeOutSine };
+  const defaults = { duration: 0.5, ease: 'sine.out' };
 
   const menuOpenTl = gsap.timeline({
     paused: true,
@@ -50,10 +48,10 @@ function registerMenuEvent() {
       [...links, sns, shopInfo],
       {
         opacity: 0,
-        y: 5,
-        stagger: 0.08,
+        y: 8,
+        stagger: 0.1,
       },
-      '<',
+      '0.12',
     );
 
   const menuCloseTl = gsap.timeline({ paused: true, defaults });
@@ -76,30 +74,16 @@ function registerMenuEvent() {
 
   links?.forEach((link) => {
     link.addEventListener('click', () => {
+      menuClose();
       if (link.hash) {
         menuCloseTl.progress(1);
-        lenis?.scrollTo(link.hash);
+        getLenis()?.scrollTo(link.hash);
       }
     });
   });
 }
 
 /** 初期化 */
-function initMenu() {
+export function initMenu() {
   registerMenuEvent();
-}
-
-const setupSwup = () => {
-  if (!window.swup) return;
-  initMenu();
-
-  window.swup.hooks.on('page:view', () => {
-    initMenu();
-    menuClose();
-  });
-};
-if (window.swup) {
-  setupSwup();
-} else {
-  document.addEventListener('swup:enable', setupSwup);
 }

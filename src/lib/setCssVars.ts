@@ -5,6 +5,3 @@ export function setCssVars(): void {
   const vh = window.innerHeight;
   root.style.setProperty('--vh', `${vh}px`);
 }
-
-// 初回実行
-setCssVars();
