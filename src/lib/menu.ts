@@ -27,7 +27,7 @@ function registerMenuEvent() {
   const links = nav.querySelectorAll<HTMLAnchorElement>('.nav-list a');
   const sns = gnav.querySelector('.sns');
   const shopInfo = gnav.querySelector('.shop-info-details');
-  const defaults = { duration: 0.5, ease: 'sine.out' };
+  const defaults = { duration: 0.4, ease: 'sine.out' };
 
   const menuOpenTl = gsap.timeline({
     paused: true,
@@ -48,10 +48,10 @@ function registerMenuEvent() {
       [...links, sns, shopInfo],
       {
         opacity: 0,
-        y: 8,
-        stagger: 0.1,
+        filter: 'blur(4px)',
+        y: 10,
       },
-      '0.12',
+      '0.1',
     );
 
   const menuCloseTl = gsap.timeline({ paused: true, defaults });

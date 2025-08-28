@@ -23,10 +23,10 @@ import ShopInfoDetails from '@components/ShopInfoDetails.astro';
     height: 100%;
     overflow: auto;
     overscroll-behavior: none;
-    color: #fff;
+    color: var(--color-text);
     pointer-events: auto;
     scrollbar-width: none;
-    background-color: var(--color-main);
+    background-color: #fff;
     -ms-overflow-style: none;
 
     &::-webkit-scrollbar {
@@ -65,6 +65,6 @@ import ShopInfoDetails from '@components/ShopInfoDetails.astro';
     width: fit-content;
     padding: clamp-size(32) clamp-size(12);
     margin-top: clamp-size(24);
-    border-top: 1px solid #fff;
+    border-top: 1px solid var(--color-text);
   }
 </style>
