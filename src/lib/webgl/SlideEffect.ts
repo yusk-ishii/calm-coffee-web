@@ -13,7 +13,7 @@ interface SlideEffectOptions {
   easing?: string;
 }
 
-class SlideEffect {
+export class SlideEffect {
   private container: HTMLElement;
   private width: number;
   private height: number;
@@ -162,23 +162,4 @@ class SlideEffect {
       },
     });
   }
-}
-
-export function initFvVisualSlider() {
-  const fvVisualSlider = document.getElementById('fv-visual-slider') as HTMLCanvasElement | null;
-
-  if (!fvVisualSlider) return;
-  new SlideEffect(fvVisualSlider, {
-    images: [
-      '/src/assets/fv_01.jpg',
-      '/src/assets/fv_02.jpg',
-      '/src/assets/fv_03.jpg',
-      '/src/assets/fv_04.jpg',
-    ],
-    displacementPath: '/src/assets/displacement.jpg',
-    intensity: 0.1,
-    duration: 6000,
-    loopInterval: 8000,
-    easing: 'sine.out',
-  });
 }
