@@ -74,7 +74,7 @@ class SlideEffect {
       antialias: true,
       alpha: true,
     });
-    this.renderer.setPixelRatio(window.devicePixelRatio);
+    this.renderer.setPixelRatio(2.0);
     this.renderer.setClearColor(0xffffff, 0.0);
     this.renderer.setSize(this.width, this.height);
 
