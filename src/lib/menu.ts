@@ -47,11 +47,12 @@ function registerMenuEvent() {
     .from(
       [...links, sns, shopInfo],
       {
+        duration: 0.5,
         opacity: 0,
-        filter: 'blur(4px)',
-        y: 10,
+        filter: 'blur(10px)',
+        y: -5,
       },
-      '0.1',
+      '0.15',
     );
 
   const menuCloseTl = gsap.timeline({ paused: true, defaults });

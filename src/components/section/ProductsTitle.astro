@@ -25,6 +25,7 @@ const { title, subTitle, paragraphs } = Astro.props;
 
   .subtitle {
     margin-top: clamp-size(12);
+    margin-left: calc(clamp-size(2) * -1); // 微調整
     font-size: clamp-size(43);
     font-weight: 300;
     line-height: 1.4;
