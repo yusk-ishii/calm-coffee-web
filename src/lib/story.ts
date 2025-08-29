@@ -18,10 +18,10 @@ export function initStoryAnimation() {
     defaults: { ease: easeOutSine },
     scrollTrigger: {
       trigger: story,
-      start: '15% 75%',
-      end: '10% 20%',
+      start: '15% 70%',
+      end: '8% 12%',
       // markers: true,
-      scrub: 5,
+      scrub: 4,
       once: true,
     },
   });

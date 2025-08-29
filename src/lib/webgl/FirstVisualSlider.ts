@@ -12,7 +12,7 @@ export function initFirstVisualSlider() {
   new SlideEffect(fvVisualSlider, {
     images: [fv01.src, fv02.src, fv03.src, fv04.src],
     displacementPath: displacement.src,
-    intensity: 0.1,
+    intensity: 0.18,
     duration: 6000,
     loopInterval: 5000,
     easing: 'sine.out',
