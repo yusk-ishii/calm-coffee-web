@@ -80,8 +80,14 @@ export class SlideEffect {
 
     // テクスチャ読み込み
     const loader = new THREE.TextureLoader();
-    this.textures = this.images.map((src) => loader.load(src));
+    this.textures = this.images.map((src) => {
+      const tex = loader.load(src);
+      tex.wrapS = tex.wrapT = THREE.MirroredRepeatWrapping;
+      return tex;
+    });
     this.displacement = loader.load(displacementPath);
+    this.displacement.magFilter = this.displacement.minFilter = THREE.LinearFilter;
+    this.displacement.wrapS = this.displacement.wrapT = THREE.MirroredRepeatWrapping;
 
     this.material = new THREE.ShaderMaterial({
       uniforms: {
@@ -94,8 +100,11 @@ export class SlideEffect {
           value: new THREE.Vector4(this.width, this.height, scaleX, scaleY),
         },
       },
+
       vertexShader,
       fragmentShader,
+      transparent: true,
+      opacity: 1,
     });
 
     const geometry = new THREE.PlaneGeometry(this.width, this.height, 1);
