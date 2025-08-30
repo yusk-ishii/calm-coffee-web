@@ -75,9 +75,8 @@ function registerMenuEvent() {
 
   links?.forEach((link) => {
     link.addEventListener('click', () => {
-      menuClose();
+      menuCloseTl.play(0);
       if (link.hash) {
-        menuCloseTl.progress(1);
         getLenis()?.scrollTo(link.hash);
       }
     });
