@@ -6,6 +6,7 @@ import LinkButton from '@components/LinkButton.astro';
 import Menu01Img from '@assets/image_menu01.jpg';
 import Menu02Img from '@assets/image_menu02.jpg';
 
+const base = import.meta.env.BASE_URL;
 const id = 'menu';
 const title = 'MENU';
 const subTitle = '季節に寄り添う<br />珈琲たち。';
@@ -34,7 +35,7 @@ const paragraphs = [
     </li>
   </ul>
   <div class="menu-link">
-    <LinkButton url="./menu.pdf" text="全メニューを見る" />
+    <LinkButton url={`${base}/menu.pdf`} text="全メニューを見る" />
   </div>
 
   <style lang="scss">
