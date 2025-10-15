@@ -80,11 +80,13 @@ import LogoType from '@components/LogoType.astro';
   #fv-visual-slider {
     width: 100%;
     height: 100%;
+    opacity: 0;
+    animation: blur-in 2s 1.6s both var(--ease-out-sine);
   }
 
   .fv-content {
     height: 50%;
-    animation: blur-in 2s both var(--ease-out-sine);
+    animation: blur-in 2s 1.6s both var(--ease-out-sine);
 
     @include mq-desktop {
       height: auto;
